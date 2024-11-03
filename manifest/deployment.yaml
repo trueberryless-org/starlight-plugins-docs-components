@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: starlight-plugins-docs-components
+    namespace: starlight-plugins-docs-components
+    labels:
+        app: starlight-plugins-docs-components
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            app: starlight-plugins-docs-components
+    template:
+        metadata:
+            labels:
+                app: starlight-plugins-docs-components
+        spec:
+            containers:
+                - name: starlight-plugins-docs-components
+                  image: "trueberryless/starlight-plugins-docs-components:main-d6e126d7c2a34f94a6a9ef82c37bd97cbac0df18"
+                  imagePullPolicy: Always

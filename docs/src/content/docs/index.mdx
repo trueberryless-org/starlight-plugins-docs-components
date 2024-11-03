@@ -1,0 +1,30 @@
+---
+title: Starlight Plugins Docs Components (@trueberryless-org)
+description: Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations
+head:
+    - tag: title
+      content: Starlight Plugins Docs Components
+template: splash
+editUrl: false
+hero:
+    tagline: Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations
+    image:
+        html: "🛠️"
+    actions:
+        - text: Get Started
+          link: /getting-started/
+          icon: right-arrow
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+## Next steps
+
+<CardGrid stagger>
+    <Card title="Install the plugin" icon="puzzle">
+        Check the [getting started guide](/getting-started/) for installation instructions.
+    </Card>
+    <Card title="Configure the plugin" icon="setting">
+        Edit your config in the `astro.config.mjs` file.
+    </Card>
+</CardGrid>

@@ -1,0 +1,24 @@
+---
+import { ShowcaseText } from 'starlight-showcases'
+
+import { getResourcesByType, type ResourceType } from '../libs/resources'
+
+export type ResourceProps = Props
+
+interface Props {
+  type: ResourceType
+}
+
+const { type } = Astro.props
+
+const resources = await getResourcesByType(type)
+---
+
+{ resources && resources.length > 0 ? <ShowcaseText
+  entries={resources.map((resource) => ({
+    href: resource.url ?? `https://github.com/trueberryless-org/${resource.name}`,
+    title: resource.name,
+    description: resource.description,
+  }))}
+/>
+: <p>trueberryless-org has not yet published any {type}.</p>}

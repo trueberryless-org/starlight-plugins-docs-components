@@ -1,0 +1,11 @@
+---
+import { getResourceTypes } from "../libs/resources";
+import Resources from "./Resources.astro";
+import { capitalCase } from "change-case";
+const resourceTypes = await getResourceTypes()
+---
+
+{resourceTypes.map((resourceType) => (
+    <h2>{capitalCase(resourceType)}</h2>
+    <Resources type={resourceType} />
+))}

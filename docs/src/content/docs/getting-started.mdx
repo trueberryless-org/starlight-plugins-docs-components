@@ -1,0 +1,130 @@
+---
+title: Getting Started
+---
+
+Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations
+
+## Prerequisites
+
+You will need to have a Starlight website set up.
+If you don't have one yet, you can follow the ["Getting Started"](https://starlight.astro.build/getting-started) guide in the Starlight docs to create one.
+
+## Installation
+
+import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
+
+<Steps>
+
+1. `@trueberryless-org/starlight-plugins-docs-components` is a Starlight [plugin](https://starlight.astro.build/reference/plugins/). Install it by running the following command in your terminal:
+
+    <Tabs syncKey="pkg">
+
+    <TabItem label="npm">
+
+    ```sh
+    npm install @trueberryless-org/starlight-plugins-docs-components
+    ```
+
+    </TabItem>
+
+    <TabItem label="pnpm">
+
+    ```sh
+    pnpm add @trueberryless-org/starlight-plugins-docs-components
+    ```
+
+    </TabItem>
+
+    <TabItem label="Yarn">
+
+    ```sh
+    yarn add @trueberryless-org/starlight-plugins-docs-components
+    ```
+
+    </TabItem>
+
+    </Tabs>
+
+2. Configure the plugin in your Starlight [configuration](https://starlight.astro.build/reference/configuration/#plugins) in the `astro.config.mjs` file.
+
+    ```diff lang="js"
+    // astro.config.mjs
+    import starlight from '@astrojs/starlight'
+    import { defineConfig } from 'astro/config'
+
+    export default defineConfig({
+      integrations: [
+        starlight({
+          title: 'My Docs',
+        }),
+        sidebar: [
+          {
+            label: "Start Here",
+            items: [{ slug: "getting-started" }],
+          },
+    +      {
+    +        label: "Showcase",
+    +        autogenerate: { directory: "showcase" },
+    +      },
+        ],
+      ],
+    })
+    ```
+
+3. Copy the following Markdoc content into your `src/content/docs/showcase/plugins.mdx` file.
+
+    ```astro title="showcase/plugins.mdx"
+    ---
+    title: Starlight Plugins and Tools
+    description: A collection of plugins and tools created by trueberryless-org
+    sidebar:
+        label: Plugins and Tools
+    ---
+
+    import {
+        ResourcesIntro,
+        ResourcesList,
+    } from "@trueberryless-org/starlight-plugins-docs-components";
+
+    <ResourcesIntro />
+    <ResourcesList />
+    ```
+
+4. Copy the following Markdoc content into your `src/content/docs/showcase/sites.mdx` file.
+
+    ```astro title="showcase/sites.mdx"
+    ---
+    title: Sites
+    description: A collection of sites using the Starlight Sidebar Topics Dropdown plugin.
+    ---
+
+    import { ShowcaseIntro, Showcase } from "@trueberryless-org/starlight-plugins-docs-components";
+
+    <ShowcaseIntro
+        cta="Have you built a website using YOUR PLUGIN?"
+        href="https://github.com/trueberryless-org/YOUR_PLUGIN/edit/main/docs/src/content/docs/showcase/sites.mdx"
+    />
+
+    ## Sites
+
+    Starlight Plugin is already being used in production. These are some of the sites around the web:
+
+    <Showcase
+        entries={[
+            {
+                thumbnail: import("../../../assets/starlight-sidebar-topics-dropdown.png"),
+                href: "https://github.com/trueberryless-org/starlight-sidebar-topics-dropdown",
+                title: "starlight-sidebar-topics-dropdown",
+            },
+            {
+                thumbnail: import("../../../assets/starlight-view-modes.png"),
+                href: "https://github.com/trueberryless-org/starlight-view-modes",
+                title: "starlight-view-modes",
+            },
+        ]}
+    />
+    ```
+
+5. [Start the development server](https://starlight.astro.build/getting-started/#start-the-development-server) to preview the plugin in action.
+
+</Steps>
