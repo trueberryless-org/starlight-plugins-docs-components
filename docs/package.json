@@ -1,6 +1,6 @@
 {
     "name": "@trueberryless-org/starlight-plugins-docs-components-docs",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "license": "MIT",
     "description": "Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations",
     "author": "trueberryless-org",
@@ -22,6 +22,7 @@
     "engines": {
         "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
     },
+    "packageManager": "pnpm@9.3.0",
     "private": true,
     "homepage": "https://github.com/trueberryless-org/starlight-plugins-docs-components",
     "repository": {
