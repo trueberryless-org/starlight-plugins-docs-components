@@ -41,9 +41,6 @@ importers:
       astro:
         specifier: ^4.16.8
         version: 4.16.8(rollup@4.24.3)(typescript@5.6.3)
-      humanize-list:
-        specifier: ^1.0.1
-        version: 1.0.1
 
 packages:
 
@@ -1138,9 +1135,6 @@ packages:
 
   http-cache-semantics@4.1.1:
     resolution: {integrity: sha512-er295DKPVsV82j5kw1Gjt+ADA/XYHsajl82cGNQG2eyoPkvgUhX+nDIyelzhIWbbsXP39EHcI6l5tYs2FYqYXQ==}
-
-  humanize-list@1.0.1:
-    resolution: {integrity: sha512-4+p3fCRF21oUqxhK0yZ6yaSP/H5/wZumc7q1fH99RkW7Q13aAxDeP78BKjoR+6y+kaHqKF/JWuQhsNuuI2NKtA==}
 
   i18next@23.16.4:
     resolution: {integrity: sha512-9NIYBVy9cs4wIqzurf7nLXPyf3R78xYbxExVqHLK9od3038rjpyOEzW+XB130kZ1N4PZ9inTtJ471CRJ4Ituyg==}
@@ -3271,8 +3265,6 @@ snapshots:
       entities: 4.5.0
 
   http-cache-semantics@4.1.1: {}
-
-  humanize-list@1.0.1: {}
 
   i18next@23.16.4:
     dependencies:

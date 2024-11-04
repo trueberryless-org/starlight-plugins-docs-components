@@ -1,6 +1,6 @@
 {
     "name": "@trueberryless-org/starlight-plugins-docs-components",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "license": "MIT",
     "description": "Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations",
     "author": "trueberryless-org",
@@ -11,8 +11,7 @@
     },
     "devDependencies": {
         "@astrojs/starlight": "^0.28.5",
-        "astro": "^4.16.8",
-        "humanize-list": "^1.0.1"
+        "astro": "^4.16.8"
     },
     "peerDependencies": {
         "@astrojs/starlight": ">=0.28"
