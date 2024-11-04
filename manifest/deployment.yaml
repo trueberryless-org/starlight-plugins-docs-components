@@ -17,5 +17,5 @@ spec:
     spec:
       containers:
         - name: starlight-plugins-docs-components
-          image: "trueberryless/starlight-plugins-docs-components:main-41289f3c6d0d25ece375668800bfc902c8511d4a"
+          image: "trueberryless/starlight-plugins-docs-components:main-b0d7b95b8cca9e38b1fcfde5ba56359e3953a02e"
           imagePullPolicy: Always
