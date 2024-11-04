@@ -63,8 +63,8 @@ import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
             items: [{ slug: "getting-started" }],
           },
     +      {
-    +        label: "Showcase",
-    +        autogenerate: { directory: "showcase" },
+    +        label: "Resources",
+    +        autogenerate: { directory: "resources" },
     +      },
         ],
       ],
@@ -73,7 +73,7 @@ import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
 
 3. Copy the following Markdoc content into your `src/content/docs/showcase/plugins.mdx` file.
 
-    ```astro title="showcase/plugins.mdx"
+    ```astro title="resources/plugins.mdx"
     ---
     title: Starlight Plugins and Tools
     description: A collection of plugins and tools created by trueberryless-org
@@ -92,9 +92,9 @@ import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
 
 4. Copy the following Markdoc content into your `src/content/docs/showcase/sites.mdx` file.
 
-    ```astro title="showcase/sites.mdx"
+    ```astro title="resources/sites.mdx"
     ---
-    title: Sites
+    title: Site Showcase
     description: A collection of sites using the YOUR_PLUGIN plugin.
     ---
 
