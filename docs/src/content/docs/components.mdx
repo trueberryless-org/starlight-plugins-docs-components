@@ -2,6 +2,8 @@
 title: Components
 ---
 
+Here you can find a list of all the components which are exported by the `@trueberryless-org/starlight-plugins-docs-components` package.
+
 import {
     Resources,
     ResourcesIntro,
@@ -12,6 +14,10 @@ import {
 
 import Preview from "../../components/component-preview.astro";
 
+### ResourcesIntro
+
+The `ResourcesIntro` component is used to introduce the resources section. It centralizes the management of the introduction content, so it only needs to be changed in one place.
+
 ```mdx
 <ResourcesIntro />
 ```
@@ -21,3 +27,99 @@ import Preview from "../../components/component-preview.astro";
 <ResourcesIntro />
 
 </Preview>
+
+### Resources
+
+The `Resources` component is used to display all resources of a specific type. The `type` property is one of the keys of the [raw JSON data](#raw-json-data).
+
+```mdx
+<Resources type="plugins" />
+```
+
+<Preview>
+
+<Resources type="plugins" />
+
+</Preview>
+
+### ResourcesList
+
+The `ResourcesList` component is used to display all resources of all types with the keys as headings. It can be useful when you want to display all resources in a list but you don't want to list all the types manually.
+
+```mdx
+<ResourcesList />
+```
+
+<Preview>
+
+<ResourcesList />
+
+</Preview>
+
+### ShowcaseIntro
+
+The `ShowcaseIntro` component is used to introduce the showcase section. It centralizes the management of the introduction content, so it only needs to be changed in one place. Each introduction of the showcase page has its own "Call to action" text and `href` property, which is used to link to the source code of the showcase page.
+
+```mdx
+<ShowcaseIntro
+    cta="Have you built a website using YOUR_PLUGIN?"
+    href="https://github.com/trueberryless-org/YOUR_PLUGIN/edit/main/docs/src/content/docs/showcase/sites.mdx"
+/>
+```
+
+<Preview>
+
+<ShowcaseIntro
+    cta="Have you built a website using YOUR_PLUGIN?"
+    href="https://github.com/trueberryless-org/YOUR_PLUGIN/edit/main/docs/src/content/docs/showcase/sites.mdx"
+/>
+
+</Preview>
+
+### Showcase
+
+The `Showcase` component is used to display a list of showcase entries. These entries have to be listed manually in the `entries` property via `JSON` syntax.
+
+```mdx
+<Showcase
+    entries={[
+        {
+            thumbnail: import("../../assets/starlight-sidebar-topics-dropdown.png"),
+            href: "https://github.com/trueberryless-org/starlight-sidebar-topics-dropdown",
+            title: "starlight-sidebar-topics-dropdown",
+        },
+        {
+            thumbnail: import("../../assets/starlight-view-modes.png"),
+            href: "https://github.com/trueberryless-org/starlight-view-modes",
+            title: "starlight-view-modes",
+        },
+    ]}
+/>
+```
+
+<Preview>
+
+<Showcase
+    entries={[
+        {
+            thumbnail: import("../../assets/starlight-sidebar-topics-dropdown.png"),
+            href: "https://github.com/trueberryless-org/starlight-sidebar-topics-dropdown",
+            title: "starlight-sidebar-topics-dropdown",
+        },
+        {
+            thumbnail: import("../../assets/starlight-view-modes.png"),
+            href: "https://github.com/trueberryless-org/starlight-view-modes",
+            title: "starlight-view-modes",
+        },
+    ]}
+/>
+
+</Preview>
+
+## Raw JSON Data
+
+import RawJsonCode from "../../components/resource-json.astro";
+
+Here is the raw JSON data for all the components listed above. It's stored in a GitHub Gist, so that every plugin can use it. You can find the Gist [here](https://gist.github.com/trueberryless/7ed4110d6f4cf4d2517d98dfcc035705).
+
+<RawJsonCode />
