@@ -1,0 +1,81 @@
+---
+title: Add Hideoo's components
+---
+
+[HiDeoo](https://github.com/HiDeoo) is a Starlight plugin developer. He also created a set of Starlight [components](https://github.com/HiDeoo/starlight-plugins-docs-components). If you want to add them to your Starlight website, you can follow the following steps:
+
+## Prerequisites
+
+You will need to have a Starlight website set up.
+If you don't have one yet, you can follow the ["Getting Started"](https://starlight.astro.build/getting-started) guide in the Starlight docs to create one.
+
+## Installation
+
+import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
+
+<Steps>
+
+1. `@hideoo/starlight-plugins-docs-components` is a Starlight [plugin](https://starlight.astro.build/reference/plugins/). Install it by running the following command in your terminal:
+
+    <Tabs syncKey="pkg">
+
+    <TabItem label="npm">
+
+    ```sh
+    npm install @hideoo/starlight-plugins-docs-components
+    ```
+
+    </TabItem>
+
+    <TabItem label="pnpm">
+
+    ```sh
+    pnpm add @hideoo/starlight-plugins-docs-components
+    ```
+
+    </TabItem>
+
+    <TabItem label="Yarn">
+
+    ```sh
+    yarn add @hideoo/starlight-plugins-docs-components
+    ```
+
+    </TabItem>
+
+    </Tabs>
+
+2. Copy the following Markdoc content into your `src/content/docs/showcase/hideoo.mdx` file.
+
+    ```astro title="resources/hideoo.mdx"
+    ---
+    title: Content from HiDeoo
+    description: Discover other Starlight plugins, components and tools developed by HiDeoo.
+    sidebar:
+        order: 3
+    ---
+
+    import { ResourcesIntro, Resources } from "@hideoo/starlight-plugins-docs-components";
+
+    :::note
+    We simply left this page as a thank you for [HiDeoo](https://github.com/HiDeoo). Be sure to check out the cool stuff below from this **legendary guy**!
+    :::
+
+    <ResourcesIntro />
+
+    ## Plugins
+
+    <Resources type="plugins" />
+
+    ## Components
+
+    <Resources type="components" />
+
+    ## Tools
+
+    <Resources type="tools" />
+    ```
+
+3. [Start the development server](https://starlight.astro.build/getting-started/#start-the-development-server) to preview the plugin in action.
+
+</Steps>

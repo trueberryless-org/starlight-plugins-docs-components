@@ -13,6 +13,9 @@ importers:
       '@astrojs/starlight':
         specifier: ^0.28.5
         version: 0.28.5(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3))
+      '@hideoo/starlight-plugins-docs-components':
+        specifier: ^0.2.2
+        version: 0.2.2(@astrojs/starlight@0.28.5(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3)))(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3))
       '@trueberryless-org/starlight-plugins-docs-components':
         specifier: workspace:*
         version: link:../packages/starlight-plugins-docs-components
@@ -335,6 +338,12 @@ packages:
 
   '@expressive-code/plugin-text-markers@0.35.6':
     resolution: {integrity: sha512-/k9eWVZSCs+uEKHR++22Uu6eIbHWEciVHbIuD8frT8DlqTtHYaaiwHPncO6KFWnGDz5i/gL7oyl6XmOi/E6GVg==}
+
+  '@hideoo/starlight-plugins-docs-components@0.2.2':
+    resolution: {integrity: sha512-SJUoeDvdMLgETbYn2GPXI4IDy7l2kWcfA458M4a4a6kAtTAIdguRTDgqNjPAuCyV9s74VDdKLPh3KCUvUTfBGg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@astrojs/starlight': '>=0.24.0'
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -1737,6 +1746,19 @@ packages:
       '@astrojs/starlight': '>=0.15.0'
       astro: '>=4.0.0'
 
+  starlight-package-managers@0.6.0:
+    resolution: {integrity: sha512-2tE0B4ZVEZXZ1LJjcSvVXLfJP8SB2nE+nhiFgSa3fuHUPtnbzmFxLVp7jEKD8jaMXKWPYtlNTy95gJSK9W1sbQ==}
+    engines: {node: '>=18.14.1'}
+    peerDependencies:
+      '@astrojs/starlight': '>=0.22.0'
+      astro: '>=4.2.7'
+
+  starlight-showcases@0.1.2:
+    resolution: {integrity: sha512-yj3RjcdWLIWdehTjne9Ethd3ff95vMbuVx/87lU4yilTQewQxjnAyOf1KSnGUgTMQT5WTqhDw8LciPBJox+b8Q==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@astrojs/starlight': '>=0.23.0'
+
   starlight-showcases@0.2.0:
     resolution: {integrity: sha512-YWJuTqArkUdVJV85VKZJ0BvKCQRu1SKtH/Cr5t6G/oIfI4IptWc92E7BmiuNnpuQ2U7TczTRidCYurPrbgQQVA==}
     engines: {node: '>=18'}
@@ -2303,6 +2325,14 @@ snapshots:
   '@expressive-code/plugin-text-markers@0.35.6':
     dependencies:
       '@expressive-code/core': 0.35.6
+
+  '@hideoo/starlight-plugins-docs-components@0.2.2(@astrojs/starlight@0.28.5(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3)))(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3))':
+    dependencies:
+      '@astrojs/starlight': 0.28.5(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3))
+      starlight-package-managers: 0.6.0(@astrojs/starlight@0.28.5(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3)))(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3))
+      starlight-showcases: 0.1.2(@astrojs/starlight@0.28.5(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3)))(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3))
+    transitivePeerDependencies:
+      - astro
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
@@ -4268,6 +4298,19 @@ snapshots:
       mdast-util-to-string: 4.0.0
       picomatch: 4.0.2
       unist-util-visit: 5.0.0
+
+  starlight-package-managers@0.6.0(@astrojs/starlight@0.28.5(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3)))(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3)):
+    dependencies:
+      '@astrojs/starlight': 0.28.5(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3))
+      astro: 4.16.8(rollup@4.24.3)(typescript@5.6.3)
+
+  starlight-showcases@0.1.2(@astrojs/starlight@0.28.5(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3)))(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3)):
+    dependencies:
+      '@astro-community/astro-embed-twitter': 0.5.8(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3))
+      '@astro-community/astro-embed-youtube': 0.5.5(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3))
+      '@astrojs/starlight': 0.28.5(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3))
+    transitivePeerDependencies:
+      - astro
 
   starlight-showcases@0.2.0(@astrojs/starlight@0.28.5(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3)))(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3)):
     dependencies:

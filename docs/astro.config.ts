@@ -14,11 +14,15 @@ export default defineConfig({
             sidebar: [
                 {
                     label: "Start Here",
-                    items: [{ slug: "getting-started" }, { slug: "components" }],
+                    items: [
+                        { slug: "getting-started" },
+                        { slug: "add-hideoo" },
+                        { slug: "components" },
+                    ],
                 },
                 {
-                    label: "Showcase",
-                    autogenerate: { directory: "showcase" },
+                    label: "Resources",
+                    autogenerate: { directory: "resources" },
                 },
             ],
             social: {
