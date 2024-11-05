@@ -4,7 +4,6 @@ import {
     validateConfig,
     type StarlightPluginsDocsComponentsUserConfig,
 } from "./libs/config";
-import { vitePluginStarlightPluginsDocsComponentsConfig } from "./libs/vite";
 
 export type { StarlightPluginsDocsComponentsConfig, StarlightPluginsDocsComponentsUserConfig };
 
@@ -73,14 +72,6 @@ export default function starlightPluginsDocsComponents(
                             //     entrypoint: "@trueberryless-org/starlight-plugins-docs-components/routes/Hideoo.astro",
                             //     prerender: true,
                             // });
-
-                            updateConfig({
-                                vite: {
-                                    plugins: [
-                                        vitePluginStarlightPluginsDocsComponentsConfig(config),
-                                    ],
-                                },
-                            });
                         },
                     },
                 });
