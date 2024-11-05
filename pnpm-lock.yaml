@@ -31,6 +31,9 @@ importers:
 
   packages/starlight-plugins-docs-components:
     dependencies:
+      '@hideoo/starlight-plugins-docs-components':
+        specifier: ^0.2.2
+        version: 0.2.2(@astrojs/starlight@0.28.5(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3)))(astro@4.16.8(rollup@4.24.3)(typescript@5.6.3))
       change-case:
         specifier: ^5.4.4
         version: 5.4.4

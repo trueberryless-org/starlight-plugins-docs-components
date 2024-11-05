@@ -1,0 +1,36 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { capitalCase, kebabCase } from "change-case";
+import Showcase from '../components/Showcase.astro';
+import ShowcaseIntro from '../components/ShowcaseIntro.astro';
+import type { ShowcaseProps } from '../components/Showcase.astro';
+
+export const prerender = true
+
+interface Props {
+    githubOwner?: string;
+    pluginName: string;
+    showcaseProps: ShowcaseProps;
+}
+
+const { githubOwner = "trueberryless-org", pluginName, showcaseProps } = Astro.props
+---
+
+<StarlightPage 
+    frontmatter={{
+        title: 'Site Showcase',
+        description: `A collection of sites using the ${capitalCase(pluginName)} plugin.`,
+        sidebar: { order: 1 }
+    }}
+>
+    <ShowcaseIntro
+        cta=`Have you built a website using ${capitalCase(pluginName)}?``
+        href=`https://github.com/${githubOwner}/${kebabCase(pluginName)}/edit/main/docs/src/content/docs/showcase/sites.mdx``
+    />
+
+    <h2>Sites</h2>
+
+    <p>{capitalCase(pluginName)} is already being used in production. These are some of the sites around the web:</p>
+
+    <Showcase {...showcaseProps} />
+</StarlightPage>

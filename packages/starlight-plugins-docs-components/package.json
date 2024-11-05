@@ -7,6 +7,8 @@
     "type": "module",
     "exports": {
         ".": "./index.ts",
+        "./routes/Sites.astro": "./routes/Sites.astro",
+        "./routes/Plugins.astro": "./routes/Plugins.astro",
         "./package.json": "./package.json"
     },
     "devDependencies": {
@@ -30,6 +32,7 @@
     },
     "bugs": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues",
     "dependencies": {
+        "@hideoo/starlight-plugins-docs-components": "^0.2.2",
         "change-case": "^5.4.4",
         "starlight-showcases": "^0.2.0"
     }

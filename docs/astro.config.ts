@@ -1,6 +1,7 @@
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
 import starlightLinksValidator from "starlight-links-validator";
+import starlightPluginsDocsComponents from "@trueberryless-org/starlight-plugins-docs-components";
 
 export default defineConfig({
     integrations: [
@@ -10,7 +11,23 @@ export default defineConfig({
                     "https://github.com/trueberryless-org/starlight-plugins-docs-components/edit/main/docs/",
             },
             customCss: ["./src/styles/custom.css"],
-            plugins: [starlightLinksValidator()],
+            plugins: [
+                starlightLinksValidator(),
+                starlightPluginsDocsComponents({
+                    showcaseEntries: [
+                        {
+                            thumbnail: import("../../assets/starlight-sidebar-topics-dropdown.png"),
+                            href: "https://github.com/trueberryless-org/starlight-sidebar-topics-dropdown",
+                            title: "starlight-sidebar-topics-dropdown",
+                        },
+                        {
+                            thumbnail: import("../../assets/starlight-view-modes.png"),
+                            href: "https://github.com/trueberryless-org/starlight-view-modes",
+                            title: "starlight-view-modes",
+                        },
+                    ],
+                }),
+            ],
             sidebar: [
                 {
                     label: "Start Here",
@@ -19,10 +36,6 @@ export default defineConfig({
                         { slug: "add-hideoo" },
                         { slug: "components" },
                     ],
-                },
-                {
-                    label: "Resources",
-                    autogenerate: { directory: "resources" },
                 },
             ],
             social: {

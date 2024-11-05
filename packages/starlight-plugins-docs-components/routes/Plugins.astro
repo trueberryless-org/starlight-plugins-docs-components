@@ -1,0 +1,26 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import ResourcesIntro from '../components/ResourcesIntro.astro';
+import ResourcesList from '../components/ResourcesList.astro';
+import { capitalCase } from "change-case";
+import humanizeList from "../libs/humanizeList";
+import { getResourceTypes } from '../libs/resources';
+
+export const prerender = true
+
+const resourceTypes = await getResourceTypes()
+---
+
+<StarlightPage 
+    frontmatter={{ 
+        title: `Starlight ${humanizeList(resourceTypes.map((resourceType) => capitalCase(resourceType)))}`, 
+        description: `A collection of ${humanizeList(resourceTypes)} created by trueberryless-org`, 
+        sidebar: { order: 2 } 
+    }} 
+    headings={resourceTypes.map((resourceType) => (
+        { depth: 2, slug: `${resourceType}`, text: capitalCase(resourceType) }
+    ))}
+>
+    <ResourcesIntro />
+    <ResourcesList />
+</StarlightPage>
