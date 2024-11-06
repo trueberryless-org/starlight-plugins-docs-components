@@ -1,49 +1,76 @@
 import { AstroError } from "astro/errors";
-import { z } from "astro/zod";
+import {
+    z,
+    type ZodLiteral,
+    type ZodNumber,
+    type ZodObject,
+    type ZodString,
+    type ZodUnion,
+} from "astro/zod";
 
 const configSchema = z
     .object({
         /**
-         * A list of showcase entries to be displayed in the showcase page.
+         * The owner of the GitHub repository.
          *
-         * @default []
-         * @see {@link ShowcaseImageProps}
+         * @default "trueberryless-org"
          */
-        showcaseEntries: z
-            .array(
-                z.object({
-                    /**
-                     * The name of the project which uses your plugin.
-                     *
-                     * @see {@link ShowcaseImageCardProps.title}
-                     */
-                    title: z.string(),
+        githubOwner: z.string().default("trueberryless-org"),
 
-                    /**
-                     * The description of the project which uses your plugin.
-                     *
-                     * @see {@link ShowcaseImageCardProps.description}
-                     */
-                    description: z.string().optional(),
+        /**
+         * The name of the plugin.
+         */
+        pluginName: z.string().default("starlight-plugins-docs-components"),
 
-                    /**
-                     * The thumbnail of the project which uses your plugin.
-                     *
-                     * @see {@link ShowcaseImageCardProps.thumbnail}
-                     */
-                    thumbnail: z.promise(z.object({ default: z.any() })),
+        /**
+         * The props for the showcase page.
+         */
+        showcaseProps: z
+            .object({
+                /**
+                 * A list of showcase entries to be displayed in the showcase page.
+                 *
+                 * @default []
+                 * @see {@link ShowcaseImageProps}
+                 */
+                entries: z
+                    .array(
+                        z.object({
+                            /**
+                             * The name of the project which uses your plugin.
+                             *
+                             * @see {@link ShowcaseImageCardProps.title}
+                             */
+                            title: z.string(),
 
-                    /**
-                     * The URL of the project which uses your plugin.
-                     *
-                     * @see {@link ShowcaseImageCardProps.href}
-                     */
-                    href: z.string(),
-                })
-            )
-            .default([]),
+                            /**
+                             * The description of the project which uses your plugin.
+                             *
+                             * @see {@link ShowcaseImageCardProps.description}
+                             */
+                            description: z.string().optional(),
+
+                            /**
+                             * The thumbnail of the project which uses your plugin.
+                             *
+                             * @see {@link ShowcaseImageCardProps.thumbnail}
+                             */
+                            thumbnail: z.any(),
+
+                            /**
+                             * The URL of the project which uses your plugin.
+                             *
+                             * @see {@link ShowcaseImageCardProps.href}
+                             */
+                            href: z.string(),
+                        })
+                    )
+                    .default([]),
+            })
+            .default({}),
     })
     .default({});
+
 export function validateConfig(userConfig: unknown): StarlightPluginsDocsComponentsConfig {
     const config = configSchema.safeParse(userConfig);
 

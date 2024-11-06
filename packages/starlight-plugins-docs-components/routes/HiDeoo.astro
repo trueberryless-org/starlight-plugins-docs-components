@@ -1,0 +1,42 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { ResourcesIntro, Resources } from "@hideoo/starlight-plugins-docs-components";
+import { Aside } from '@astrojs/starlight/components';
+
+export const prerender = true
+---
+
+<StarlightPage 
+    frontmatter={{ 
+        title: `Content from HiDeoo`, 
+        description: `Discover other Starlight plugins, components and tools developed by HiDeoo.`, 
+        sidebar: { order: 3 } 
+    }} 
+    headings={
+        [
+            { depth: 2, slug: `plugins`, text: `Plugins` },
+            { depth: 2, slug: `components`, text: `Components` },
+            { depth: 2, slug: `tools`, text: `Tools` },
+        ]
+    }
+>
+    <Aside>
+        <p>We simply left this page as a thank you for <a href="https://github.com/HiDeoo">HiDeoo</a>. Be sure to check out the cool stuff below from this <strong>legendary guy</strong> 🙌!</p>
+    </Aside>
+
+    <ResourcesIntro />
+
+    <h2 id="plugins">Plugins</h2>
+
+    <Resources type="plugins" />
+
+    <h2 id="components">Components</h2>
+
+    <Resources type="components" />
+
+    <h2 id="tools">Tools</h2>
+
+    <Resources type="tools" />
+</StarlightPage>
+
+

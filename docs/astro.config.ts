@@ -14,18 +14,24 @@ export default defineConfig({
             plugins: [
                 starlightLinksValidator(),
                 starlightPluginsDocsComponents({
-                    showcaseEntries: [
-                        {
-                            thumbnail: import("../../assets/starlight-sidebar-topics-dropdown.png"),
-                            href: "https://github.com/trueberryless-org/starlight-sidebar-topics-dropdown",
-                            title: "starlight-sidebar-topics-dropdown",
-                        },
-                        {
-                            thumbnail: import("../../assets/starlight-view-modes.png"),
-                            href: "https://github.com/trueberryless-org/starlight-view-modes",
-                            title: "starlight-view-modes",
-                        },
-                    ],
+                    showcaseProps: {
+                        entries: [
+                            {
+                                thumbnail: () =>
+                                    import(
+                                        "../../../docs/src/assets/starlight-sidebar-topics-dropdown.png"
+                                    ),
+                                href: "https://github.com/trueberryless-org/starlight-sidebar-topics-dropdown",
+                                title: "starlight-sidebar-topics-dropdown",
+                            },
+                            {
+                                thumbnail: () =>
+                                    import("../../../docs/src/assets/starlight-view-modes.png"),
+                                href: "https://github.com/trueberryless-org/starlight-view-modes",
+                                title: "starlight-view-modes",
+                            },
+                        ],
+                    },
                 }),
             ],
             sidebar: [

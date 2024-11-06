@@ -9,6 +9,7 @@
         ".": "./index.ts",
         "./routes/Sites.astro": "./routes/Sites.astro",
         "./routes/Plugins.astro": "./routes/Plugins.astro",
+        "./routes/HiDeoo.astro": "./routes/HiDeoo.astro",
         "./package.json": "./package.json"
     },
     "devDependencies": {

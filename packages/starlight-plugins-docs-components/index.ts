@@ -68,11 +68,12 @@ export default function starlightPluginsDocsComponents(
                                 prerender: true,
                             });
 
-                            // injectRoute({
-                            //     pattern: "/resources/hideoo",
-                            //     entrypoint: "@trueberryless-org/starlight-plugins-docs-components/routes/Hideoo.astro",
-                            //     prerender: true,
-                            // });
+                            injectRoute({
+                                pattern: "/resources/hideoo",
+                                entrypoint:
+                                    "@trueberryless-org/starlight-plugins-docs-components/routes/HiDeoo.astro",
+                                prerender: true,
+                            });
 
                             updateConfig({
                                 vite: {

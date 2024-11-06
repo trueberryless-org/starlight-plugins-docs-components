@@ -4,33 +4,28 @@ import { capitalCase, kebabCase } from "change-case";
 import Showcase from '../components/Showcase.astro';
 import ShowcaseIntro from '../components/ShowcaseIntro.astro';
 import type { ShowcaseProps } from '../components/Showcase.astro';
+import config from 'virtual:starlight-plugins-docs-components-config'
 
 export const prerender = true
 
-interface Props {
-    githubOwner?: string;
-    pluginName: string;
-    showcaseProps: ShowcaseProps;
-}
-
-const { githubOwner = "trueberryless-org", pluginName, showcaseProps } = Astro.props
+console.log(config.showcaseProps)
 ---
 
 <StarlightPage 
     frontmatter={{
         title: 'Site Showcase',
-        description: `A collection of sites using the ${capitalCase(pluginName)} plugin.`,
+        description: `A collection of sites using the ${capitalCase(config.pluginName)} plugin.`,
         sidebar: { order: 1 }
     }}
 >
     <ShowcaseIntro
-        cta=`Have you built a website using ${capitalCase(pluginName)}?``
-        href=`https://github.com/${githubOwner}/${kebabCase(pluginName)}/edit/main/docs/src/content/docs/showcase/sites.mdx``
+        cta=`Have you built a website using ${capitalCase(config.pluginName)}?``
+        href=`https://github.com/${config.githubOwner}/${kebabCase(config.pluginName)}/edit/main/docs/src/content/docs/showcase/sites.mdx``
     />
 
     <h2>Sites</h2>
 
-    <p>{capitalCase(pluginName)} is already being used in production. These are some of the sites around the web:</p>
+    <p>{capitalCase(config.pluginName)} is already being used in production. These are some of the sites around the web:</p>
 
-    <Showcase {...showcaseProps} />
+    <Showcase entries={config.showcaseProps.entries as ShowcaseProps['entries']} />
 </StarlightPage>

@@ -6,6 +6,6 @@ const resourceTypes = await getResourceTypes()
 ---
 
 {resourceTypes.map((resourceType) => (
-    <h2>{capitalCase(resourceType)}</h2>
+    <h2 id={resourceType}>{capitalCase(resourceType)}</h2>
     <Resources type={resourceType} />
 ))}

@@ -5,12 +5,12 @@ import type { StarlightPluginsDocsComponentsConfig } from "..";
 export function vitePluginStarlightPluginsDocsComponentsConfig(
     config: StarlightPluginsDocsComponentsConfig
 ): VitePlugin {
-    const moduleId = "virtual:starlight-view-modes-config";
+    const moduleId = "virtual:starlight-plugins-docs-components-config";
     const resolvedModuleId = `\0${moduleId}`;
     const moduleContent = `export default ${JSON.stringify(config)}`;
 
     return {
-        name: "vite-plugin-starlight-view-modes-config",
+        name: "vite-plugin-starlight-plugins-docs-components-config",
         load(id) {
             return id === resolvedModuleId ? moduleContent : undefined;
         },
