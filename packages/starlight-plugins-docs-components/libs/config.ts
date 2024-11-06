@@ -55,7 +55,7 @@ const configSchema = z
                              *
                              * @see {@link ShowcaseImageCardProps.thumbnail}
                              */
-                            thumbnail: z.any(),
+                            thumbnail: z.promise(z.object({ default: z.any() })),
 
                             /**
                              * The URL of the project which uses your plugin.
