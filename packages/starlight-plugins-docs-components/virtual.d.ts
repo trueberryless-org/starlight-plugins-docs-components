@@ -1,4 +1,4 @@
-declare module "virtual:starlight-plugins-docs-components-config" {
-    const StarlightPluginsDocsComponentsConfig: import("./index").StarlightPluginsDocsComponentsConfig;
-    export default StarlightPluginsDocsComponentsConfig;
+declare module "virtual:starlight-plugins-docs-components-context" {
+    const StarlightPluginsDocsComponentsContext: import("./libs/vite").StarlightPluginsDocsComponentsContext;
+    export default StarlightPluginsDocsComponentsContext;
 }

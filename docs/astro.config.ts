@@ -14,21 +14,22 @@ export default defineConfig({
             plugins: [
                 starlightLinksValidator(),
                 starlightPluginsDocsComponents({
+                    pluginName: "starlight-plugins-docs-components",
                     showcaseProps: {
                         entries: [
                             {
-                                thumbnail: import(
-                                    "../../../docs/src/assets/starlight-sidebar-topics-dropdown.png"
-                                ),
+                                thumbnail: "./src/assets/starlight-sidebar-topics-dropdown.png",
                                 href: "https://github.com/trueberryless-org/starlight-sidebar-topics-dropdown",
-                                title: "starlight-sidebar-topics-dropdown",
+                                title: "Starlight Sidebar Topics Dropdown",
+                                description:
+                                    "Split your docs page into multiple subpages and switch between them with a dropdown menu in the sidebar.",
                             },
                             {
-                                thumbnail: import(
-                                    "../../../docs/src/assets/starlight-view-modes.png"
-                                ),
+                                thumbnail: "./src/assets/starlight-view-modes.png",
                                 href: "https://github.com/trueberryless-org/starlight-view-modes",
-                                title: "starlight-view-modes",
+                                title: "Starlight View Modes",
+                                description:
+                                    "Add different view mode capabilities to your documentation website.",
                             },
                         ],
                     },
