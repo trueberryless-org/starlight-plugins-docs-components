@@ -6,6 +6,10 @@ import starlightPluginsDocsComponents from "@trueberryless-org/starlight-plugins
 export default defineConfig({
     integrations: [
         starlight({
+            title: "SPDC",
+            logo: {
+                src: "./src/assets/logo.png",
+            },
             editLink: {
                 baseUrl:
                     "https://github.com/trueberryless-org/starlight-plugins-docs-components/edit/main/docs/",
@@ -35,6 +39,11 @@ export default defineConfig({
                     },
                 }),
             ],
+            expressiveCode: {
+                defaultProps: {
+                    wrap: true,
+                },
+            },
             sidebar: [
                 {
                     label: "Start Here",
@@ -48,7 +57,6 @@ export default defineConfig({
             social: {
                 github: "https://github.com/trueberryless-org/starlight-plugins-docs-components",
             },
-            title: "Starlight Plugins Docs Components",
         }),
     ],
 });

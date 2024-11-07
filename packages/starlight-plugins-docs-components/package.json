@@ -7,6 +7,11 @@
     "type": "module",
     "exports": {
         ".": "./index.ts",
+        "./components/Resources.astro": "./components/Resources.astro",
+        "./components/ResourcesIntro.astro": "./components/ResourcesIntro.astro",
+        "./components/ResourcesList.astro": "./components/ResourcesList.astro",
+        "./components/ShowcaseIntro.astro": "./components/ShowcaseIntro.astro",
+        "./components/Showcase.astro": "./components/Showcase.astro",
         "./routes/Sites.astro": "./routes/Sites.astro",
         "./routes/Plugins.astro": "./routes/Plugins.astro",
         "./routes/HiDeoo.astro": "./routes/HiDeoo.astro",
