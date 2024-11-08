@@ -5,14 +5,16 @@ export type ShowcaseIntroProps = Props
 
 interface Props {
   cta: string
-  href: string
+  href: string,
+  emptyList: boolean
 }
 
-const { cta, href } = Astro.props
+const { cta, href, emptyList } = Astro.props
 ---
 
 <ShowcaseCTA>
   {cta}  
   <br />
-  <a {href}>Open a PR</a> to add it to the list!
+  {!emptyList && (<p><a {href}>Open a PR</a> to add it to the list!</p>)}
+  {emptyList && (<p>Be the first one to <a {href}>open a PR</a> and initialize the list!</p>)}
 </ShowcaseCTA>
