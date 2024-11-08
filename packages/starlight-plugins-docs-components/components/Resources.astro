@@ -6,12 +6,13 @@ import { getResourcesByType, type ResourceType } from '../libs/resources'
 export type ResourceProps = Props
 
 interface Props {
-  type: ResourceType
+  type: ResourceType,
+  resourcesUrl?: string | undefined
 }
 
-const { type } = Astro.props
+const { type, resourcesUrl } = Astro.props
 
-const resources = await getResourcesByType(type)
+const resources = await getResourcesByType(type, resourcesUrl)
 ---
 
 { resources && resources.length > 0 ? <ShowcaseText

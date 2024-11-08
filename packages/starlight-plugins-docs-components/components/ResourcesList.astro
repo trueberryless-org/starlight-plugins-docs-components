@@ -2,10 +2,17 @@
 import { getResourceTypes } from "../libs/resources";
 import Resources from "./Resources.astro";
 import { capitalCase } from "change-case";
-const resourceTypes = await getResourceTypes()
+
+interface Props {
+    resourcesUrl?: string | undefined;
+}
+
+const { resourcesUrl } = Astro.props;
+
+const resourceTypes = await getResourceTypes(resourcesUrl);
 ---
 
 {resourceTypes.map((resourceType) => (
     <h2 id={resourceType}>{capitalCase(resourceType)}</h2>
-    <Resources type={resourceType} />
+    <Resources type={resourceType} resourcesUrl={resourcesUrl}/>
 ))}
