@@ -6,9 +6,11 @@ import starlightPluginsDocsComponents from "@trueberryless-org/starlight-plugins
 export default defineConfig({
     integrations: [
         starlight({
-            title: "SPDC",
+            title: "Starlight Plugins Docs Components",
             logo: {
-                src: "./src/assets/logo.png",
+                light: "./src/assets/logo-white.png",
+                dark: "./src/assets/logo-dark.png",
+                replacesTitle: true,
             },
             editLink: {
                 baseUrl:
