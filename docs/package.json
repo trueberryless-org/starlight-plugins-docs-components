@@ -1,35 +1,35 @@
 {
-  "name": "@trueberryless-org/starlight-plugins-docs-components-docs",
-  "version": "0.1.1",
-  "license": "MIT",
-  "description": "Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations",
-  "author": "trueberryless-org",
-  "type": "module",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/starlight": "^0.28.5",
-    "@hideoo/starlight-plugins-docs-components": "^0.2.2",
-    "@trueberryless-org/starlight-plugins-docs-components": "workspace:*",
-    "astro": "^4.16.8",
-    "sharp": "^0.33.5",
-    "starlight-links-validator": "^0.13.0"
-  },
-  "engines": {
-    "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
-  },
-  "packageManager": "pnpm@9.3.0",
-  "private": true,
-  "homepage": "https://github.com/trueberryless-org/starlight-plugins-docs-components",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components.git",
-    "directory": "docs"
-  },
-  "bugs": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues"
+    "name": "@trueberryless-org/starlight-plugins-docs-components-docs",
+    "version": "0.2.0",
+    "license": "MIT",
+    "description": "Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations",
+    "author": "trueberryless-org",
+    "type": "module",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/starlight": "^0.28.5",
+        "@hideoo/starlight-plugins-docs-components": "^0.2.2",
+        "@trueberryless-org/starlight-plugins-docs-components": "workspace:*",
+        "astro": "^4.16.8",
+        "sharp": "^0.33.5",
+        "starlight-links-validator": "^0.13.0"
+    },
+    "engines": {
+        "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
+    },
+    "packageManager": "pnpm@9.3.0",
+    "private": true,
+    "homepage": "https://github.com/trueberryless-org/starlight-plugins-docs-components",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components.git",
+        "directory": "docs"
+    },
+    "bugs": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues"
 }
