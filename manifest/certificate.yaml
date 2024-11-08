@@ -1,12 +1,12 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-    name: starlight-plugins-docs-components
-    namespace: starlight-plugins-docs-components
+  name: starlight-plugins-docs-components
+  namespace: starlight-plugins-docs-components
 spec:
-    secretName: starlight-plugins-docs-components
-    issuerRef:
-        name: acme-issuer
-        kind: ClusterIssuer
-    dnsNames:
-        - "starlight-plugins-docs-components.trueberryless.org"
+  secretName: starlight-plugins-docs-components
+  issuerRef:
+    name: acme-issuer
+    kind: ClusterIssuer
+  dnsNames:
+    - "starlight-plugins-docs-components.trueberryless.org"

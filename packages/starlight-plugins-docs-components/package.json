@@ -1,36 +1,45 @@
 {
-    "name": "@trueberryless-org/starlight-plugins-docs-components",
-    "version": "0.1.1",
-    "license": "MIT",
-    "description": "Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations",
-    "author": "trueberryless-org",
-    "type": "module",
-    "exports": {
-        ".": "./index.ts",
-        "./package.json": "./package.json"
-    },
-    "devDependencies": {
-        "@astrojs/starlight": "^0.28.5",
-        "astro": "^4.16.8"
-    },
-    "peerDependencies": {
-        "@astrojs/starlight": ">=0.28"
-    },
-    "engines": {
-        "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "homepage": "https://github.com/trueberryless-org/starlight-plugins-docs-components",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components.git",
-        "directory": "packages/starlight-plugins-docs-components"
-    },
-    "bugs": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues",
-    "dependencies": {
-        "change-case": "^5.4.4",
-        "starlight-showcases": "^0.2.0"
-    }
+  "name": "@trueberryless-org/starlight-plugins-docs-components",
+  "version": "0.1.1",
+  "license": "MIT",
+  "description": "Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations",
+  "author": "trueberryless-org",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./components/Resources.astro": "./components/Resources.astro",
+    "./components/ResourcesIntro.astro": "./components/ResourcesIntro.astro",
+    "./components/ResourcesList.astro": "./components/ResourcesList.astro",
+    "./components/ShowcaseIntro.astro": "./components/ShowcaseIntro.astro",
+    "./components/Showcase.astro": "./components/Showcase.astro",
+    "./routes/Sites.astro": "./routes/Sites.astro",
+    "./routes/Plugins.astro": "./routes/Plugins.astro",
+    "./routes/HiDeoo.astro": "./routes/HiDeoo.astro",
+    "./package.json": "./package.json"
+  },
+  "devDependencies": {
+    "@astrojs/starlight": "^0.28.5",
+    "astro": "^4.16.8"
+  },
+  "peerDependencies": {
+    "@astrojs/starlight": ">=0.28"
+  },
+  "engines": {
+    "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/trueberryless-org/starlight-plugins-docs-components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components.git",
+    "directory": "packages/starlight-plugins-docs-components"
+  },
+  "bugs": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues",
+  "dependencies": {
+    "@hideoo/starlight-plugins-docs-components": "^0.2.2",
+    "change-case": "^5.4.4",
+    "starlight-showcases": "^0.2.0"
+  }
 }

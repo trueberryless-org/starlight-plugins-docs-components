@@ -1,4 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-    name: starlight-plugins-docs-components
+  name: starlight-plugins-docs-components
