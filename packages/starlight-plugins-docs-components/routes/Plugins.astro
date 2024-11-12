@@ -1,10 +1,30 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import ResourcesIntro from '../components/ResourcesIntro.astro';
-import ResourcesList from '../components/ResourcesList.astro';
+import starlightConfig from 'virtual:starlight/user-config'
+
 import { capitalCase } from "change-case";
+
 import humanizeList from "../libs/humanizeList";
 import { getResourceTypes } from '../libs/resources';
+import { DefaultLocale } from '../libs/i18n'
+import ResourcesIntro from '../components/ResourcesIntro.astro';
+import ResourcesList from '../components/ResourcesList.astro';
+
+export function getStaticPaths() {
+    if (!starlightConfig.isMultilingual) {
+        return [
+            { params: { prefix: DefaultLocale } },
+        ]
+    }
+    else {
+        return Object.keys(starlightConfig.locales).map((localeKey) => {
+            const locale = localeKey === 'root' ? undefined : localeKey
+            return {
+                params: { prefix: locale },
+            }
+        })
+    }
+}
 
 export const prerender = true
 
