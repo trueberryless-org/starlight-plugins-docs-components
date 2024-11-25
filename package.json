@@ -1,19 +1,28 @@
 {
-    "name": "@trueberryless-org/starlight-plugins-docs-components-monorepo",
-    "version": "0.2.2",
-    "license": "MIT",
-    "description": "Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations",
-    "author": "trueberryless-org",
-    "type": "module",
-    "engines": {
-        "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
-    },
-    "packageManager": "pnpm@9.6.0",
-    "private": true,
-    "homepage": "https://github.com/trueberryless-org/starlight-plugins-docs-components",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components.git"
-    },
-    "bugs": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues"
+  "name": "@trueberryless-org/starlight-plugins-docs-components-monorepo",
+  "version": "0.2.2",
+  "private": true,
+  "description": "Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations",
+  "homepage": "https://github.com/trueberryless-org/starlight-plugins-docs-components",
+  "bugs": {
+    "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components.git"
+  },
+  "license": "MIT",
+  "author": "trueberryless <trueberryless@gmail.com> (https://trueberryless.org)",
+  "type": "module",
+  "scripts": {
+    "version": "pnpm changeset version && pnpm i --no-frozen-lockfile"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.9"
+  },
+  "packageManager": "pnpm@9.6.0",
+  "engines": {
+    "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
+  }
 }
