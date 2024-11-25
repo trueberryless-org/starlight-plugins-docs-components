@@ -10,6 +10,6 @@ Check out the `@trueberryless-org/starlight-plugins-docs-components` getting sta
 
 ## License
 
-Licensed under the MIT License, Copyright © trueberryless-org.
+Licensed under the MIT license, Copyright © trueberryless.
 
-See [LICENSE](https://github.com/trueberryless-org/starlight-plugins-docs-components/blob/main/LICENSE) for more information.
+See [LICENSE](/LICENSE) for more information.
