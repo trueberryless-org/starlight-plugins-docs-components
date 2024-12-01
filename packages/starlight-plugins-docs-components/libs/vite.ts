@@ -3,7 +3,7 @@ import type { ImageMetadata, ViteUserConfig } from "astro";
 import type { StarlightPluginsDocsComponentsConfig } from "..";
 
 export function vitePluginStarlightPluginsDocsComponentsConfig(
-  config: StarlightPluginsDocsComponentsConfig,
+  config: StarlightPluginsDocsComponentsConfig
 ): VitePlugin {
   const modules = {
     "virtual:starlight-plugins-docs-components-context": `export default {
@@ -15,11 +15,15 @@ export function vitePluginStarlightPluginsDocsComponentsConfig(
                     ${config.showcaseProps.entries
                       .map(
                         (entry) => `{
-                                thumbnail: await import(${JSON.stringify(entry.thumbnail)}),
+                                thumbnail: await import(${JSON.stringify(
+                                  entry.thumbnail
+                                )}),
                                 href: ${JSON.stringify(entry.href)},
                                 title: ${JSON.stringify(entry.title)},
-                                description: ${JSON.stringify(entry.description)}
-                            }`,
+                                description: ${JSON.stringify(
+                                  entry.description
+                                )}
+                            }`
                       )
                       .join(",")}
                 ]
@@ -31,7 +35,7 @@ export function vitePluginStarlightPluginsDocsComponentsConfig(
     (Object.keys(modules) as (keyof typeof modules)[]).map((key) => [
       resolveVirtualModuleId(key),
       key,
-    ]),
+    ])
   );
 
   return {
@@ -47,7 +51,7 @@ export function vitePluginStarlightPluginsDocsComponentsConfig(
 }
 
 function resolveVirtualModuleId<TModuleId extends string>(
-  id: TModuleId,
+  id: TModuleId
 ): `\0${TModuleId}` {
   return `\0${id}`;
 }

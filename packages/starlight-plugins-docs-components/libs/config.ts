@@ -69,7 +69,7 @@ const configSchema = z.object({
              * @see {@link ShowcaseImageCardProps.href}
              */
             href: z.string(),
-          }),
+          })
         )
         .default([]),
     })
@@ -77,7 +77,7 @@ const configSchema = z.object({
 });
 
 export function validateConfig(
-  userConfig: unknown,
+  userConfig: unknown
 ): StarlightPluginsDocsComponentsConfig {
   const config = configSchema.safeParse(userConfig);
 
@@ -90,11 +90,11 @@ export function validateConfig(
 ${errors.formErrors.map((formError) => ` - ${formError}`).join("\n")}
 ${Object.entries(errors.fieldErrors)
   .map(
-    ([fieldName, fieldErrors]) => ` - ${fieldName}: ${fieldErrors.join(" - ")}`,
+    ([fieldName, fieldErrors]) => ` - ${fieldName}: ${fieldErrors.join(" - ")}`
   )
   .join("\n")}
   `,
-      `See the error report above for more informations.\n\nIf you believe this is a bug, please file an issue at https://github.com/trueberryless-org/starlight-plugins-docs-components/issues/new`,
+      `See the error report above for more informations.\n\nIf you believe this is a bug, please file an issue at https://github.com/trueberryless-org/starlight-plugins-docs-components/issues/new`
     );
   }
 
