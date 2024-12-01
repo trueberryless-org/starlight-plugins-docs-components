@@ -1,6 +1,6 @@
 export default function humanizeList(
   list: any[],
-  options?: { conjunction?: any; skipConjunction?: any; oxfordComma?: any },
+  options?: { conjunction?: any; skipConjunction?: any; oxfordComma?: any }
 ) {
   if (!Array.isArray(list)) {
     throw new TypeError("humanize-list expected an array");
