@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: starlight-plugins-docs-components
-  namespace: starlight-plugins-docs-components
+  name: <%= repositoryName %>
+  namespace: <%= repositoryName %>
   labels:
-    app: starlight-plugins-docs-components
+    app: <%= repositoryName %>
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: starlight-plugins-docs-components
+      app: <%= repositoryName %>
   template:
     metadata:
       labels:
-        app: starlight-plugins-docs-components
+        app: <%= repositoryName %>
     spec:
       containers:
-        - name: starlight-plugins-docs-components
-          image: "trueberryless/starlight-plugins-docs-components"
+        - name: <%= repositoryName %>
+          image: "trueberryless/<%= repositoryName %>"
           imagePullPolicy: Always
