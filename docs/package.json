@@ -21,10 +21,10 @@
     "start": "astro dev"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.28.5",
+    "@astrojs/starlight": "^0.30.3",
     "@hideoo/starlight-plugins-docs-components": "^0.2.2",
     "@trueberryless-org/starlight-plugins-docs-components": "workspace:*",
-    "astro": "^4.16.8",
+    "astro": "^5.1.1",
     "sharp": "^0.33.5",
     "starlight-links-validator": "^0.13.0"
   },
