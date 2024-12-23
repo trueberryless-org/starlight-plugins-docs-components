@@ -1,5 +1,11 @@
 # @trueberryless-org/starlight-plugins-docs-components-docs
 
+## 0.3.1
+
+### Patch Changes
+
+- [#16](https://github.com/trueberryless-org/starlight-plugins-docs-components/pull/16) [`abf3097`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/abf3097bde8937daddd33af487df99e0c83d76c6) Thanks [@trueberryless](https://github.com/trueberryless)! - Add Starlight Plugin Show Latest Version
+
 ## 0.3.0
 
 ### Minor Changes
