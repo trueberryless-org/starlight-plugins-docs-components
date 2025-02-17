@@ -1,5 +1,11 @@
 # @trueberryless-org/starlight-plugins-docs-components-docs
 
+## 0.3.3
+
+### Patch Changes
+
+- [`db2fb41`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/db2fb41e0da01e43b5818690ac4d51daaeeab55d) Thanks [@trueberryless](https://github.com/trueberryless)! - Pull latest version from npm instead of GitHub.
+
 ## 0.3.2
 
 ### Patch Changes
