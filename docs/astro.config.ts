@@ -47,8 +47,8 @@ export default defineConfig({
         }),
         starlightPluginShowLatestVersion({
           source: {
-            type: "github",
-            slug: "trueberryless-org/starlight-plugins-docs-components",
+            type: "npm",
+            slug: "@trueberryless-org/starlight-plugins-docs-components",
           },
           showInSiteTitle: "deferred",
         }),
