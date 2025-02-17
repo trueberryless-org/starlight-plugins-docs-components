@@ -1,5 +1,11 @@
 # @trueberryless-org/starlight-plugins-docs-components
 
+## 0.4.1
+
+### Patch Changes
+
+- [#25](https://github.com/trueberryless-org/starlight-plugins-docs-components/pull/25) [`a1e806d`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/a1e806d87e37298385849fe5c020821a5600558a) Thanks [@trueberryless-org](https://github.com/apps/trueberryless-org)! - Fix Dockerfile
+
 ## 0.4.0
 
 ### Minor Changes
