@@ -1,5 +1,12 @@
 # @trueberryless-org/starlight-plugins-docs-components-docs
 
+## 0.3.2
+
+### Patch Changes
+
+- Updated dependencies [[`5a66083`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/5a660837a0e5fe7fa098a4c3f50450720e1ba020)]:
+  - @trueberryless-org/starlight-plugins-docs-components@0.4.0
+
 ## 0.3.1
 
 ### Patch Changes

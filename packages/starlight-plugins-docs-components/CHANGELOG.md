@@ -1,5 +1,17 @@
 # @trueberryless-org/starlight-plugins-docs-components
 
+## 0.4.0
+
+### Minor Changes
+
+- [#22](https://github.com/trueberryless-org/starlight-plugins-docs-components/pull/22) [`5a66083`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/5a660837a0e5fe7fa098a4c3f50450720e1ba020) Thanks [@trueberryless](https://github.com/trueberryless)! - ⚠️ **BREAKING CHANGE:** The minimum supported version of Starlight is now version `0.32.0`.
+
+  Please use the `@astrojs/upgrade` command to upgrade your project:
+
+  ```sh
+  npx @astrojs/upgrade
+  ```
+
 ## 0.3.0
 
 ### Minor Changes
