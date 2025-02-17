@@ -4,6 +4,8 @@ import starlightLinksValidator from "starlight-links-validator";
 import starlightPluginsDocsComponents from "@trueberryless-org/starlight-plugins-docs-components";
 import starlightPluginShowLatestVersion from "starlight-plugin-show-latest-version";
 
+import node from "@astrojs/node";
+
 export default defineConfig({
   integrations: [
     starlight({
@@ -44,7 +46,11 @@ export default defineConfig({
           },
         }),
         starlightPluginShowLatestVersion({
-          repo: "trueberryless-org/starlight-plugins-docs-components",
+          source: {
+            type: "github",
+            slug: "trueberryless-org/starlight-plugins-docs-components",
+          },
+          showInSiteTitle: "deferred",
         }),
       ],
       expressiveCode: {
@@ -68,4 +74,7 @@ export default defineConfig({
       },
     }),
   ],
+  adapter: node({
+    mode: "standalone",
+  }),
 });
