@@ -2,9 +2,6 @@ import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
 import starlightLinksValidator from "starlight-links-validator";
 import starlightPluginsDocsComponents from "@trueberryless-org/starlight-plugins-docs-components";
-import starlightPluginShowLatestVersion from "starlight-plugin-show-latest-version";
-
-import node from "@astrojs/node";
 
 export default defineConfig({
   integrations: [
@@ -45,13 +42,6 @@ export default defineConfig({
             ],
           },
         }),
-        starlightPluginShowLatestVersion({
-          source: {
-            type: "npm",
-            slug: "@trueberryless-org/starlight-plugins-docs-components",
-          },
-          showInSiteTitle: "deferred",
-        }),
       ],
       expressiveCode: {
         defaultProps: {
@@ -74,7 +64,4 @@ export default defineConfig({
       },
     }),
   ],
-  adapter: node({
-    mode: "standalone",
-  }),
 });
