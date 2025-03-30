@@ -1,5 +1,11 @@
 # @trueberryless-org/starlight-plugins-docs-components
 
+## 0.4.2
+
+### Patch Changes
+
+- [`ddb1cbb`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/ddb1cbb5dc43e2848319e200e3d15cdd56240ad9) Thanks [@trueberryless](https://github.com/trueberryless)! - Remove console logs
+
 ## 0.4.1
 
 ### Patch Changes
