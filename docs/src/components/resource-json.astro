@@ -1,12 +1,13 @@
 ---
-import { Code } from '@astrojs/starlight/components';
+import { Code } from "@astrojs/starlight/components";
 
-const resourcesUrl = "https://gist.githubusercontent.com/trueberryless/7ed4110d6f4cf4d2517d98dfcc035705/raw";
+const resourcesUrl =
+  "https://gist.githubusercontent.com/trueberryless/7ed4110d6f4cf4d2517d98dfcc035705/raw";
 
 interface Resource {
-    name: string;
-    description: string;
-    url?: string;
+  name: string;
+  description: string;
+  url?: string;
 }
 
 type Resources = Record<string, Resource[]>;
@@ -15,12 +16,12 @@ let resources: Resources | null = null;
 
 // Fetch resources at build time
 try {
-    const response = await fetch(resourcesUrl);
-    resources = await response.json() as Resources;
+  const response = await fetch(resourcesUrl);
+  resources = (await response.json()) as Resources;
 } catch (error) {
-    console.error("Failed to fetch resources:", error);
-    resources = null;
+  console.error("Failed to fetch resources:", error);
+  resources = null;
 }
 ---
 
-<Code code={JSON.stringify(resources, null, 2)} lang='json' />
+<Code code={JSON.stringify(resources, null, 2)} lang="json" />

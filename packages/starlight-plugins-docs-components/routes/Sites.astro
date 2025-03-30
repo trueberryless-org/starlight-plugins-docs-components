@@ -1,55 +1,56 @@
 ---
-import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
 import context from "virtual:starlight-plugins-docs-components-context";
-import starlightConfig from 'virtual:starlight/user-config'
+import starlightConfig from "virtual:starlight/user-config";
 
 import { capitalCase, kebabCase } from "change-case";
 
-import { DefaultLocale } from '../libs/i18n'
-import Showcase from '../components/Showcase.astro';
-import ShowcaseIntro from '../components/ShowcaseIntro.astro';
+import { DefaultLocale } from "../libs/i18n";
+import Showcase from "../components/Showcase.astro";
+import ShowcaseIntro from "../components/ShowcaseIntro.astro";
 
 export function getStaticPaths() {
-    if (!starlightConfig.isMultilingual) {
-        return [
-            { params: { prefix: DefaultLocale } },
-        ]
-    }
-    else {
-        return Object.keys(starlightConfig.locales).map((localeKey) => {
-            const locale = localeKey === 'root' ? undefined : localeKey
-            return {
-                params: { prefix: locale },
-            }
-        })
-    }
+  if (!starlightConfig.isMultilingual) {
+    return [{ params: { prefix: DefaultLocale } }];
+  } else {
+    return Object.keys(starlightConfig.locales).map((localeKey) => {
+      const locale = localeKey === "root" ? undefined : localeKey;
+      return {
+        params: { prefix: locale },
+      };
+    });
+  }
 }
 
-
-export const prerender = true
+export const prerender = true;
 ---
 
-<StarlightPage 
-    frontmatter={{
-        title: 'Site Showcase',
-        description: `A collection of sites using the ${capitalCase(context.pluginName)} plugin.`,
-        sidebar: { order: 1 }
-    }}
-    headings={[{ depth: 2, slug: 'sites', text: 'Sites' }]}
+<StarlightPage
+  frontmatter={{
+    title: "Site Showcase",
+    description: `A collection of sites using the ${capitalCase(context.pluginName)} plugin.`,
+    sidebar: { order: 1 },
+  }}
+  headings={[{ depth: 2, slug: "sites", text: "Sites" }]}
 >
-    <ShowcaseIntro
-        cta=`Have you built a website using ${capitalCase(context.pluginName)}?`
-        href=`https://github.com/${context.githubOwner}/${kebabCase(context.pluginName)}/edit/main/${context.showcaseFilepath}`
-        emptyList={context.showcaseProps.entries.length === 0}
-    />
+  <ShowcaseIntro
+    cta=`Have you built a website using ${capitalCase(context.pluginName)}?`
+    href=`https://github.com/${context.githubOwner}/${kebabCase(context.pluginName)}/edit/main/${context.showcaseFilepath}`
+    emptyList={context.showcaseProps.entries.length === 0}
+  />
 
-    {context.showcaseProps.entries.length !== 0 && (
+  {
+    context.showcaseProps.entries.length !== 0 && (
       <>
         <h2>Sites</h2>
 
-        <p>{capitalCase(context.pluginName)} is already being used in production. These are some of the sites around the web:</p>
+        <p>
+          {capitalCase(context.pluginName)} is already being used in production.
+          These are some of the sites around the web:
+        </p>
 
         <Showcase entries={context.showcaseProps.entries} />
       </>
-    )}
+    )
+  }
 </StarlightPage>

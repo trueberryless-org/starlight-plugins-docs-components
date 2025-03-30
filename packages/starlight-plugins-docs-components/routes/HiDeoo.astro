@@ -1,50 +1,59 @@
 ---
-import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import { Aside } from '@astrojs/starlight/components';
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { Aside } from "@astrojs/starlight/components";
 import { ResourcesIntro } from "@hideoo/starlight-plugins-docs-components";
-import starlightConfig from 'virtual:starlight/user-config'
+import starlightConfig from "virtual:starlight/user-config";
 
 import { capitalCase } from "change-case";
 
-import { getResourceTypes } from '../libs/resources';
-import { DefaultLocale } from '../libs/i18n'
-import ResourcesList from '../components/ResourcesList.astro';
+import { getResourceTypes } from "../libs/resources";
+import { DefaultLocale } from "../libs/i18n";
+import ResourcesList from "../components/ResourcesList.astro";
 
 export function getStaticPaths() {
-    if (!starlightConfig.isMultilingual) {
-        return [
-            { params: { prefix: DefaultLocale } },
-        ]
-    }
-    else {
-        return Object.keys(starlightConfig.locales).map((localeKey) => {
-            const locale = localeKey === 'root' ? undefined : localeKey
-            return {
-                params: { prefix: locale },
-            }
-        })
-    }
+  if (!starlightConfig.isMultilingual) {
+    return [{ params: { prefix: DefaultLocale } }];
+  } else {
+    return Object.keys(starlightConfig.locales).map((localeKey) => {
+      const locale = localeKey === "root" ? undefined : localeKey;
+      return {
+        params: { prefix: locale },
+      };
+    });
+  }
 }
 
-export const prerender = true
+export const prerender = true;
 
-const resourceTypes = await getResourceTypes('https://gist.githubusercontent.com/HiDeoo/3882c01c3618180c9a834b8d06a9e7c5/raw/')
+const resourceTypes = await getResourceTypes(
+  "https://gist.githubusercontent.com/HiDeoo/3882c01c3618180c9a834b8d06a9e7c5/raw/"
+);
 ---
 
-<StarlightPage 
-    frontmatter={{ 
-        title: `Content from HiDeoo`, 
-        description: `Discover other Starlight plugins, components and tools developed by HiDeoo.`, 
-        sidebar: { order: 3 } 
-    }} 
-    headings={resourceTypes.map((resourceType) => (
-        { depth: 2, slug: `${resourceType}`, text: capitalCase(resourceType) }
-    ))}
+<StarlightPage
+  frontmatter={{
+    title: `Content from HiDeoo`,
+    description: `Discover other Starlight plugins, components and tools developed by HiDeoo.`,
+    sidebar: { order: 3 },
+  }}
+  headings={resourceTypes.map((resourceType) => ({
+    depth: 2,
+    slug: `${resourceType}`,
+    text: capitalCase(resourceType),
+  }))}
 >
-    <Aside>
-        <p>We simply left this page as a thank you for <a href="https://github.com/HiDeoo">HiDeoo</a>. Be sure to check out the cool stuff below from this <strong>legendary guy</strong> 🙌!</p>
-    </Aside>
+  <Aside>
+    <p>
+      We simply left this page as a thank you for <a
+        href="https://github.com/HiDeoo">HiDeoo</a
+      >. Be sure to check out the cool stuff below from this <strong
+        >legendary guy</strong
+      > 🙌!
+    </p>
+  </Aside>
 
-    <ResourcesIntro />
-    <ResourcesList resourcesUrl='https://gist.githubusercontent.com/HiDeoo/3882c01c3618180c9a834b8d06a9e7c5/raw'/>
+  <ResourcesIntro />
+  <ResourcesList
+    resourcesUrl="https://gist.githubusercontent.com/HiDeoo/3882c01c3618180c9a834b8d06a9e7c5/raw"
+  />
 </StarlightPage>

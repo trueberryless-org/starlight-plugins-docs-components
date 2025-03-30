@@ -4,7 +4,7 @@ import Resources from "./Resources.astro";
 import { capitalCase } from "change-case";
 
 interface Props {
-    resourcesUrl?: string | undefined;
+  resourcesUrl?: string | undefined;
 }
 
 const { resourcesUrl } = Astro.props;
@@ -12,9 +12,11 @@ const { resourcesUrl } = Astro.props;
 const resourceTypes = await getResourceTypes(resourcesUrl);
 ---
 
-{resourceTypes.map((resourceType) => (
-  <>
-    <h2 id={resourceType}>{capitalCase(resourceType)}</h2>
-    <Resources type={resourceType} resourcesUrl={resourcesUrl}/>
-  </>
-))}
+{
+  resourceTypes.map((resourceType) => (
+    <>
+      <h2 id={resourceType}>{capitalCase(resourceType)}</h2>
+      <Resources type={resourceType} resourcesUrl={resourcesUrl} />
+    </>
+  ))
+}

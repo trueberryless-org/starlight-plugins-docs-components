@@ -1,8 +1,9 @@
 import type { StarlightPlugin } from "@astrojs/starlight/types";
+
 import {
   type StarlightPluginsDocsComponentsConfig,
-  validateConfig,
   type StarlightPluginsDocsComponentsUserConfig,
+  validateConfig,
 } from "./libs/config";
 import { vitePluginStarlightPluginsDocsComponentsConfig } from "./libs/vite";
 
