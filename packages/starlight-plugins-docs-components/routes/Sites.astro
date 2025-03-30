@@ -44,10 +44,12 @@ export const prerender = true
     />
 
     {context.showcaseProps.entries.length !== 0 && (
+      <>
         <h2>Sites</h2>
 
         <p>{capitalCase(context.pluginName)} is already being used in production. These are some of the sites around the web:</p>
 
         <Showcase entries={context.showcaseProps.entries} />
+      </>
     )}
 </StarlightPage>

@@ -13,6 +13,8 @@ const resourceTypes = await getResourceTypes(resourcesUrl);
 ---
 
 {resourceTypes.map((resourceType) => (
+  <>
     <h2 id={resourceType}>{capitalCase(resourceType)}</h2>
     <Resources type={resourceType} resourcesUrl={resourcesUrl}/>
+  </>
 ))}
