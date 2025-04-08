@@ -1,12 +1,5 @@
 import { AstroError } from "astro/errors";
-import {
-  type ZodLiteral,
-  type ZodNumber,
-  type ZodObject,
-  type ZodString,
-  type ZodUnion,
-  z,
-} from "astro/zod";
+import { z } from "astro/zod";
 
 const configSchema = z.object({
   /**
