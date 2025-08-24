@@ -19,7 +19,12 @@ export default defineConfig({
       customCss: ["./src/styles/custom.css"],
       plugins: [
         starlightLinksValidator({
-          exclude: ["/resources/*"],
+          exclude: ({ link }) => {
+            if (link.startsWith("/resources/")) return true;
+            const hash = link.split("#")[1];
+            if (hash && hash == "_top") return true;
+            return false;
+          },
         }),
         starlightPluginsDocsComponents({
           pluginName: "starlight-plugins-docs-components",
