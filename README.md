@@ -1,5 +1,8 @@
 # `@trueberryless-org/starlight-plugins-docs-components`
 
+[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/32e653af-f05b-4c83-8290-75e8975de88d/deploy-status)](https://app.netlify.com/projects/starlight-plugins-docs-components/deploys)
+
 Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations
 
 ## Package
