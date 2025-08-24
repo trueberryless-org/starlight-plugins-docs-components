@@ -1,0 +1,68 @@
+---
+title: Add Website to Showcase
+description: This guide shows how to add your website as an entry to the showcase powered by this plugin.
+---
+
+This guide shows how to add your website as an entry to the showcase powered by this plugin. All [our plugins](/resources/plugins) use this plugin for their showcases. 
+
+Terminology used in this guide: "the repository" / "the project" refers to this repository (the plugin's docs site), where you'll propose your website entry via a pull request.
+
+## Preparation
+
+To add your website to the showcase, prepare the following:
+
+- **Title**: The name or title of your website
+- Description (optional): A brief summary of what your website does or how it helps people (about 15 words).
+- **Image**: A thumbnail image of your website showing the first page load (ideally `.png` or `.jpg`).
+  This file needs to follow some requirements:
+  - The dimensions of the image must be **`1280 x 720px`**
+  - The file name of the image must be the domain of your website
+- **URL**: The link to your website. 
+
+## Adding the showcase entry and images
+
+In the repository, navigate to `docs/src/assets/showcase/`. If the `showcase` folder does not exist yet, create it. Add your `1280 x 720px` thumbnail to this folder. The image filename must be your **domain name**.
+
+Open `astro.config.{js,mjs,ts,mts}` and find the `starlightPluginsDocsComponents` plugin configuration. You'll see either no showcase entries yet or some already configured. Append your entry to the end of the list (you may need to add the `showcaseProps.entries` array first).
+
+```ts title="astro.config.ts" ins={11-16}
+        starlightPluginsDocsComponents({
+          pluginName: "the-repository",
+          showcaseProps: {
+            entries: [
+              {
+                thumbnail: "./src/assets/showcase/example-website.png",
+                href: "https://www.example.com",
+                title: "Example Website",
+                description: "A short description of my example website.",
+              },
+              {
+                thumbnail: "./src/assets/showcase/<your-website>.png",
+                href: "<your-link>",
+                title: "<your-title>",
+                description: "<your-description>",
+              },
+            ],
+          },
+        }),
+      ],
+```
+
+## GitHub Resources
+
+To make changes in the `astro.config.{js,mjs,ts,mts}` file and add images to `docs/src/assets/showcase` folder, you need to [create a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) of the repository on GitHub. Afterwards, [clone the fork](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to your local machine, [create a new branch](https://github.com/Kunena/Kunena-Forum/wiki/create-a-new-branch-with-git-and-manage-branches) (call it for example `docs-add-showcase`), change the files according to the ["Adding the showcase entry and images"](#adding-the-showcase-entry-and-images) section and then push your changes to your fork repository with these commands:
+
+```shell
+# Add all changed files in the current directory to the staging area
+git add .
+
+# Commit the staged changes with a descriptive message
+git commit -m "docs: add new website to showcase"
+
+# Push the commit to the remote repository on the branch 'docs-add-showcase'
+git push origin docs-add-showcase
+```
+
+You should then see the new branch you just pushed to your fork on GitHub. Now [create a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) from your new branch to the `main` branch of the original repository (our repository as defined in the [introduction](#_top) of this guide). 
+
+Don't be surprised if bots run checks and add comments to your PR. One will include a preview build of the docs site (Netlify or Vercel) where you can verify that your website appears on the Showcase page. Feel free to include the preview URL in your PR description. 🙌 A maintainer will review your changes and, once approved, your website will be included in the production showcase soon.

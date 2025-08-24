@@ -19,21 +19,27 @@ export default defineConfig({
       customCss: ["./src/styles/custom.css"],
       plugins: [
         starlightLinksValidator({
-          exclude: ["/resources/*"],
+          exclude: ({ link }) => {
+            if (link.startsWith("/resources/")) return true;
+            const hash = link.split("#")[1];
+            if (hash && hash == "_top") return true;
+            return false;
+          },
         }),
         starlightPluginsDocsComponents({
           pluginName: "starlight-plugins-docs-components",
           showcaseProps: {
             entries: [
               {
-                thumbnail: "./src/assets/starlight-sidebar-topics-dropdown.png",
+                thumbnail:
+                  "./src/assets/showcase/starlight-sidebar-topics-dropdown.png",
                 href: "https://github.com/trueberryless-org/starlight-sidebar-topics-dropdown",
                 title: "Starlight Sidebar Topics Dropdown",
                 description:
                   "Split your docs page into multiple subpages and switch between them with a dropdown menu in the sidebar.",
               },
               {
-                thumbnail: "./src/assets/starlight-view-modes.png",
+                thumbnail: "./src/assets/showcase/starlight-view-modes.png",
                 href: "https://github.com/trueberryless-org/starlight-view-modes",
                 title: "Starlight View Modes",
                 description:
@@ -53,6 +59,7 @@ export default defineConfig({
           label: "Start Here",
           items: [
             { slug: "getting-started" },
+            { slug: "add-showcase" },
             { slug: "add-hideoo" },
             { slug: "components" },
           ],
