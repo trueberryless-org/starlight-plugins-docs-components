@@ -3,14 +3,16 @@
   "version": "0.4.2",
   "description": "Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations",
   "homepage": "https://github.com/trueberryless-org/starlight-plugins-docs-components",
-  "bugs": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues",
+  "bugs": {
+    "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components.git",
     "directory": "packages/starlight-plugins-docs-components"
   },
   "license": "MIT",
-  "author": "trueberryless-org",
+  "author": "trueberryless <trueberryless@gmail.com> (https://trueberryless.org)",
   "type": "module",
   "exports": {
     ".": "./index.ts",
