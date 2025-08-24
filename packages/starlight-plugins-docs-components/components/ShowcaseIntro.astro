@@ -10,6 +10,8 @@ interface Props {
 }
 
 const { cta, href, emptyList } = Astro.props;
+const guideHref =
+  "https://starlight-plugins-docs-components.trueberryless.org/add-showcase/";
 ---
 
 <ShowcaseCTA>
@@ -18,14 +20,16 @@ const { cta, href, emptyList } = Astro.props;
   {
     !emptyList && (
       <p>
-        <a {href}>Open a PR</a> to add it to the list!
+        Follow <a href={guideHref}>our guide</a> and <a {href}>open a PR</a> to
+        add it to the list!
       </p>
     )
   }
   {
     emptyList && (
       <p>
-        Be the first one to <a {href}>open a PR</a> and initialize the list!
+        Be the first one to follow <a href={guideHref}>our guide</a> and{" "}
+        <a {href}>open a PR</a> and initialize the list!
       </p>
     )
   }

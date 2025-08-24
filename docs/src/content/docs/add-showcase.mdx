@@ -1,0 +1,64 @@
+---
+title: Add Website to Showcase
+description: This guide shows how to add your website as an entry to the showcase when using this plugin.
+---
+
+This guide shows how to add your website as an entry to the showcase when using this plugin. All [our plugins](/resources/plugins) do use this plugin for the showcase. To clarify some terminology: When this guide talks about "the repository" or "the project", we refer to client that uses this plugin; in other words the repository, where you want to add your showcase website to.
+
+## Preparation
+
+In order to successfully add your website to the showcase of the project, you will need those resources:
+
+- **Title**: The name or title of your website
+- Description (optional): A short description of what your website does, what it is or how it helps people (around 15 words).
+- **Image**: A thumbnail image of your website showing the content of the first page load (ideally `.png` or `.jpg`).
+  This file needs to follow some requirements:
+  - The dimensions of the image must be **`1280 x 720px`**
+  - The file name of the image must be the domain of your website
+- **URL**: The link to your website. 
+
+## Adding the showcase entry and images
+
+Navigate to the `/docs/src/assets/showcase/` folder inside the project. If the `showcase` folder does not exist yet, create it. Add your thumbnail image with dimensions `1280 x 720px` into this folder. The image file name must be your **domain name**.
+
+Go to the `astro.config.{js,mjs,ts,mts}` file and search for the `starlightPluginsDocsComponents` plugin. You should find a section which either has no showcase elements yet, or already some entries configured. Append your entry to the end of the list (you might have to add the `showcaseProps.entries` array as well).
+
+```ts title="astro.config.ts" ins={11-16}
+        starlightPluginsDocsComponents({
+          pluginName: "the-repository",
+          showcaseProps: {
+            entries: [
+              {
+                thumbnail: "./src/assets/showcase/example-website.png",
+                href: "https://github.com/trueberryless-org/example-website",
+                title: "Example Website",
+                description: "A short description of my example website.",
+              },
+              {
+                thumbnail: "./src/assets/showcase/<your-website>.png",
+                href: "<your-link>",
+                title: "<your-title>",
+                description: "<your-description>",
+              },
+            ],
+          },
+        }),
+      ],
+```
+
+## GitHub Resources
+
+To make changes in the `astro.config.{js,mjs,ts,mts}` file and add images to `docs/src/assets/showcase` folder, you need to [create a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) of the repository on GitHub. Afterwards, [clone the fork](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to your local machine, [create a new branch](https://github.com/Kunena/Kunena-Forum/wiki/create-a-new-branch-with-git-and-manage-branches) (call it for example `docs-add-showcase`), change the files according to the ["Adding the showcase entry and images"](#adding-the-showcase-entry-and-images) section and then push your changes to your fork repository with these commands:
+
+```shell
+# Add all changed files in the current directory to the staging area
+git add .
+
+# Commit the staged changes with a descriptive message
+git commit -m "docs: add new website to showcase"
+
+# Push the commit to the remote repository on the branch 'docs-add-showcase'
+git push origin docs-add-showcase
+```
+
+You should then see the new branch you just pushed to your fork on GitHub. Now [create a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) from your new branch to the `main` branch of the original repository (our repository as defined in the [introduction](#_top) of this guide). A maintainer will then review the changes, so your website will be included in the showcase soon.
