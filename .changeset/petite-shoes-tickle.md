@@ -2,4 +2,4 @@
 "@trueberryless-org/starlight-plugins-docs-components": patch
 ---
 
-Add link to showcase addition explaination guide.
+Add link to the showcase addition explanation guide.

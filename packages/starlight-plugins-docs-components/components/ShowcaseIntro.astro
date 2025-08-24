@@ -20,16 +20,14 @@ const guideHref =
   {
     !emptyList && (
       <p>
-        Follow <a href={guideHref}>our guide</a> and <a {href}>open a PR</a> to
-        add it to the list!
+        Follow <a href={guideHref}>our guide</a> and <a {href} target="_blank" rel="noopener noreferrer">open a PR</a> to add it to the list!
       </p>
     )
   }
   {
     emptyList && (
       <p>
-        Be the first one to follow <a href={guideHref}>our guide</a>,
-        <a {href}>open a PR</a> and initialize the list!
+        Be the first one to follow <a href={guideHref}>our guide</a>, <a {href} target="_blank" rel="noopener noreferrer">open a PR</a> and initialize the list!
       </p>
     )
   }
