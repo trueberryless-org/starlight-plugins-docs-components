@@ -1,5 +1,11 @@
 # @trueberryless-org/starlight-plugins-docs-components
 
+## 0.4.3
+
+### Patch Changes
+
+- [#38](https://github.com/trueberryless-org/starlight-plugins-docs-components/pull/38) [`662fedf`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/662fedffda9872e97043cbadffba83483fd4b70b) Thanks [@trueberryless](https://github.com/trueberryless)! - Add link to the showcase addition explanation guide.
+
 ## 0.4.2
 
 ### Patch Changes
