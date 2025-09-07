@@ -45,8 +45,8 @@ importers:
         specifier: ^0.3.0
         version: 0.3.0(@astrojs/starlight@0.33.2(astro@5.13.3(@types/node@24.3.0)(jiti@2.4.2)(rollup@4.48.0)(typescript@5.6.3)))
       starlight-links-validator:
-        specifier: ^0.17.1
-        version: 0.17.1(@astrojs/starlight@0.33.2(astro@5.13.3(@types/node@24.3.0)(jiti@2.4.2)(rollup@4.48.0)(typescript@5.6.3)))
+        specifier: ^0.17.2
+        version: 0.17.2(@astrojs/starlight@0.33.2(astro@5.13.3(@types/node@24.3.0)(jiti@2.4.2)(rollup@4.48.0)(typescript@5.6.3)))
 
   packages/starlight-plugins-docs-components:
     dependencies:
@@ -2178,8 +2178,8 @@ packages:
     peerDependencies:
       '@astrojs/starlight': '>=0.30'
 
-  starlight-links-validator@0.17.1:
-    resolution: {integrity: sha512-d2QoBO3mQPWYq/TO4I0kT/3Z9hFulnMzMPaG2dW0H14hPq4N7ZwiBl2FMrLK8I4UE34sztcBatvWCZc62S0BMQ==}
+  starlight-links-validator@0.17.2:
+    resolution: {integrity: sha512-d2SRWu04HPiUzrzntuv/uzuXnIu4reJwzX1c+7uvcnqOCuzgpv+tmlUC+dp3VYpmfxQy8RX+xcWtfcEkx905VA==}
     engines: {node: '>=18.17.1'}
     peerDependencies:
       '@astrojs/starlight': '>=0.32.0'
@@ -3880,6 +3880,10 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.2
 
+  fdir@6.5.0(picomatch@4.0.3):
+    optionalDependencies:
+      picomatch: 4.0.3
+
   fill-range@7.1.1:
     dependencies:
       to-regex-range: 5.0.1
@@ -5370,7 +5374,7 @@ snapshots:
       - encoding
       - supports-color
 
-  starlight-links-validator@0.17.1(@astrojs/starlight@0.33.2(astro@5.13.3(@types/node@24.3.0)(jiti@2.4.2)(rollup@4.48.0)(typescript@5.6.3))):
+  starlight-links-validator@0.17.2(@astrojs/starlight@0.33.2(astro@5.13.3(@types/node@24.3.0)(jiti@2.4.2)(rollup@4.48.0)(typescript@5.6.3))):
     dependencies:
       '@astrojs/starlight': 0.33.2(astro@5.13.3(@types/node@24.3.0)(jiti@2.4.2)(rollup@4.48.0)(typescript@5.6.3))
       '@types/picomatch': 3.0.2
@@ -5460,8 +5464,8 @@ snapshots:
 
   tinyglobby@0.2.14:
     dependencies:
-      fdir: 6.5.0(picomatch@4.0.2)
-      picomatch: 4.0.2
+      fdir: 6.5.0(picomatch@4.0.3)
+      picomatch: 4.0.3
 
   to-regex-range@5.0.1:
     dependencies:
