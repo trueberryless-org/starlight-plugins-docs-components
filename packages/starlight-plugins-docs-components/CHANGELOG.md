@@ -1,5 +1,13 @@
 # @trueberryless-org/starlight-plugins-docs-components
 
+## 0.4.3
+
+### Patch Changes
+
+- [#49](https://github.com/trueberryless-org/starlight-plugins-docs-components/pull/49) [`d65b41b`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/d65b41baab46fb2d4223b8db86a7526ea0d6c1ef) Thanks [@trueberryless-org](https://github.com/apps/trueberryless-org)! - Setups trusted publishing using OpenID Connect (OIDC) authentication — no code changes.
+
+- [#38](https://github.com/trueberryless-org/starlight-plugins-docs-components/pull/38) [`662fedf`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/662fedffda9872e97043cbadffba83483fd4b70b) Thanks [@trueberryless](https://github.com/trueberryless)! - Add link to the showcase addition explanation guide.
+
 ## 0.4.2
 
 ### Patch Changes
