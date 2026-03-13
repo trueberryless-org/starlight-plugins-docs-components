@@ -66,7 +66,7 @@ const configSchema = z.object({
         )
         .default([]),
     })
-    .default({}),
+    .prefault({}),
 });
 
 export function validateConfig(
