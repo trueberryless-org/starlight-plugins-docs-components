@@ -2,7 +2,7 @@
   "name": "@trueberryless-org/starlight-plugins-docs-components",
   "version": "0.4.3",
   "description": "Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations",
-  "homepage": "https://github.com/trueberryless-org/starlight-plugins-docs-components",
+  "homepage": "https://starlight-plugins-docs-components.trueberryless.org/",
   "bugs": {
     "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues"
   },
@@ -27,19 +27,19 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@hideoo/starlight-plugins-docs-components": "^0.4.0",
+    "@hideoo/starlight-plugins-docs-components": "^0.4.2",
     "change-case": "^5.4.4",
-    "starlight-showcases": "^0.2.0"
+    "starlight-showcases": "^0.3.2"
   },
   "devDependencies": {
-    "@astrojs/starlight": "^0.33.0",
-    "astro": "^5.6.1"
+    "@astrojs/starlight": "^0.38.1",
+    "astro": "^6.0.4"
   },
   "peerDependencies": {
-    "@astrojs/starlight": ">=0.32"
+    "@astrojs/starlight": ">=0.38"
   },
   "engines": {
-    "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
+    "node": ">=22.12.0"
   },
   "publishConfig": {
     "access": "public"
