@@ -1,5 +1,15 @@
 # @trueberryless-org/starlight-plugins-docs-components
 
+## 0.5.0
+
+### Minor Changes
+
+- [#59](https://github.com/trueberryless-org/starlight-plugins-docs-components/pull/59) [`5080ebf`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/5080ebf519f6beba867a9867ce271384d918607c) Thanks [@trueberryless](https://github.com/trueberryless)! - Adds support for Astro v6, drops support for Astro v5.
+
+  ⚠️ **BREAKING CHANGE:** The minimum supported version of Starlight is now `0.38.0`.
+
+  Please follow the [upgrade guide](https://github.com/withastro/starlight/releases/tag/%40astrojs%2Fstarlight%400.38.0) to update your project.
+
 ## 0.4.3
 
 ### Patch Changes
