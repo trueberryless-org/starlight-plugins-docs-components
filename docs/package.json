@@ -23,13 +23,13 @@
     "start": "astro dev"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.38.1",
-    "@hideoo/starlight-plugins-docs-components": "^0.4.0",
+    "@astrojs/starlight": "^0.38.4",
+    "@hideoo/starlight-plugins-docs-components": "^0.4.2",
     "@trueberryless-org/starlight-plugins-docs-components": "workspace:*",
     "astro": "^6.0.4",
-    "sharp": "^0.33.5",
-    "starlight-contributor-list": "^0.3.0",
-    "starlight-links-validator": "^0.20.1"
+    "sharp": "^0.34.5",
+    "starlight-contributor-list": "^0.4.0",
+    "starlight-links-validator": "^0.24.0"
   },
   "packageManager": "pnpm@10.10.0",
   "engines": {
