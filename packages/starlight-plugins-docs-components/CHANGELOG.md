@@ -1,5 +1,15 @@
 # @trueberryless-org/starlight-plugins-docs-components
 
+## 0.6.0
+
+### Minor Changes
+
+- [#71](https://github.com/trueberryless-org/starlight-plugins-docs-components/pull/71) [`c9ae6c8`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/c9ae6c8b400a0e20c890364974046d0bde8762da) Thanks [@trueberryless](https://github.com/trueberryless)! - Bump Astro to 7 and Starlight to 0.41 (Starlight `>=0.38` still supported)
+
+### Patch Changes
+
+- [`898bc12`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/898bc12abe601fecf9fe52c79d3cc090594f0fae) Thanks [@trueberryless](https://github.com/trueberryless)! - Make username segment of GitHub links configurable.
+
 ## 0.5.0
 
 ### Minor Changes
