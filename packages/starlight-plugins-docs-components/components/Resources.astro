@@ -8,9 +8,10 @@ export type ResourceProps = Props;
 interface Props {
   type: ResourceType;
   resourcesUrl?: string | undefined;
+  githubOrg?: string | undefined;
 }
 
-const { type, resourcesUrl } = Astro.props;
+const { type, resourcesUrl, githubOrg = "trueberryless-org" } = Astro.props;
 
 const resources = await getResourcesByType(type, resourcesUrl);
 ---
@@ -20,13 +21,14 @@ const resources = await getResourcesByType(type, resourcesUrl);
     <ShowcaseText
       entries={resources.map((resource) => ({
         href:
-          resource.url ??
-          `https://github.com/trueberryless-org/${resource.name}`,
+          resource.url ?? `https://github.com/${githubOrg}/${resource.name}`,
         title: resource.name,
         description: resource.description,
       }))}
     />
   ) : (
-    <p>trueberryless-org has not yet published any {type}.</p>
+    <p>
+      {githubOrg} has not yet published any {type}.
+    </p>
   )
 }
