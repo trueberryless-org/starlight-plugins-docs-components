@@ -36,7 +36,7 @@
     "astro": "^7.0.2"
   },
   "peerDependencies": {
-    "@astrojs/starlight": ">=0.41"
+    "@astrojs/starlight": ">=0.38"
   },
   "engines": {
     "node": ">=22.12.0"
