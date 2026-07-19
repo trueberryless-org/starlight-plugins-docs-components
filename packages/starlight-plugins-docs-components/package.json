@@ -2,7 +2,7 @@
   "name": "@trueberryless-org/starlight-plugins-docs-components",
   "version": "0.6.0",
   "description": "Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations",
-  "homepage": "https://starlight-plugins-docs-components.trueberryless.org",
+  "homepage": "https://starlight-plugins-docs-components.netlify.app/",
   "bugs": {
     "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues"
   },
@@ -12,7 +12,7 @@
     "directory": "packages/starlight-plugins-docs-components"
   },
   "license": "MIT",
-  "author": "trueberryless <trueberryless@gmail.com> (https://trueberryless.org)",
+  "author": "trueberryless <trueberryless@gmail.com> (https://felixs.dev)",
   "type": "module",
   "exports": {
     ".": "./index.ts",
