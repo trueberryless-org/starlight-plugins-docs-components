@@ -16,19 +16,16 @@ const { type, resourcesUrl, githubOrg = "trueberryless-org" } = Astro.props;
 const resources = await getResourcesByType(type, resourcesUrl);
 ---
 
-{
-  resources && resources.length > 0 ? (
-    <ShowcaseText
-      entries={resources.map((resource) => ({
-        href:
-          resource.url ?? `https://github.com/${githubOrg}/${resource.name}`,
-        title: resource.name,
-        description: resource.description,
-      }))}
-    />
-  ) : (
-    <p>
-      {githubOrg} has not yet published any {type}.
-    </p>
-  )
-}
+{resources && resources.length > 0 ? (
+  <ShowcaseText
+    entries={resources.map((resource) => ({
+      href: resource.url ?? `https://github.com/${githubOrg}/${resource.name}`,
+      title: resource.name,
+      description: resource.description,
+    }))}
+  />
+) : (
+  <p>
+    {githubOrg} has not yet published any {type}.
+  </p>
+)}
