@@ -1,70 +1,21 @@
-import { AstroError } from "astro/errors";
 import { z } from "astro/zod";
 
+import { throwPluginError } from "./error";
+
+const showcaseEntrySchema = z.object({
+  title: z.string(),
+  description: z.string().optional(),
+  thumbnail: z.string(),
+  href: z.string(),
+});
+
 const configSchema = z.object({
-  /**
-   * The owner of the GitHub repository.
-   *
-   * @default "trueberryless-org"
-   */
   githubOwner: z.string().default("trueberryless-org"),
-
-  /**
-   * The name of the plugin.
-   */
   pluginName: z.string(),
-
-  /**
-   * The path to the showcase page.
-   *
-   * @default "./docs/astro.config.ts"
-   */
   showcaseFilepath: z.string().default("./docs/astro.config.ts"),
-
-  /**
-   * The props for the showcase page.
-   */
   showcaseProps: z
     .object({
-      /**
-       * A list of showcase entries to be displayed in the showcase page.
-       *
-       * @default []
-       * @see {@link ShowcaseImageProps}
-       */
-      entries: z
-        .array(
-          z.object({
-            /**
-             * The name of the project which uses your plugin.
-             *
-             * @see {@link ShowcaseImageCardProps.title}
-             */
-            title: z.string(),
-
-            /**
-             * The description of the project which uses your plugin.
-             *
-             * @see {@link ShowcaseImageCardProps.description}
-             */
-            description: z.string().optional(),
-
-            /**
-             * The thumbnail of the project which uses your plugin.
-             *
-             * @see {@link ShowcaseImageCardProps.thumbnail}
-             */
-            thumbnail: z.string(),
-
-            /**
-             * The URL of the project which uses your plugin.
-             *
-             * @see {@link ShowcaseImageCardProps.href}
-             */
-            href: z.string(),
-          })
-        )
-        .default([]),
+      entries: z.array(showcaseEntrySchema).default([]),
     })
     .prefault({}),
 });
@@ -75,24 +26,16 @@ export function validateConfig(
   const config = configSchema.safeParse(userConfig);
 
   if (!config.success) {
-    const errors = config.error.flatten();
+    throwPluginError(`Invalid @trueberryless-org/starlight-plugins-docs-components configuration:
 
-    throw new AstroError(
-      `Invalid @trueberryless-org/starlight-plugins-docs-components configuration:
-
-${errors.formErrors.map((formError) => ` - ${formError}`).join("\n")}
-${Object.entries(errors.fieldErrors)
-  .map(
-    ([fieldName, fieldErrors]) => ` - ${fieldName}: ${fieldErrors.join(" - ")}`
-  )
-  .join("\n")}
-  `,
-      `See the error report above for more informations.\n\nIf you believe this is a bug, please file an issue at https://github.com/trueberryless-org/starlight-plugins-docs-components/issues/new`
-    );
+${z.prettifyError(config.error)}
+`);
   }
 
   return config.data;
 }
+
+export type ShowcaseEntryConfig = z.output<typeof showcaseEntrySchema>;
 
 export type StarlightPluginsDocsComponentsUserConfig = z.input<
   typeof configSchema

@@ -1,17 +1,46 @@
-import starlightConfig from "virtual:starlight/user-config";
+import type { StarlightUserConfig } from "@astrojs/starlight/types";
 
-export const DefaultLocale =
-  starlightConfig.defaultLocale.locale === "root"
-    ? undefined
-    : starlightConfig.defaultLocale.locale;
+const RootLocale = "root";
 
-export function getLangFromLocale(locale: Locale): string {
-  const lang = locale
-    ? starlightConfig.locales?.[locale]?.lang
-    : starlightConfig.locales?.root?.lang;
-  const defaultLang =
-    starlightConfig.defaultLocale.lang ?? starlightConfig.defaultLocale.locale;
-  return lang ?? defaultLang ?? "en";
+export function getI18nContext(
+  starlightConfig: Pick<StarlightUserConfig, "defaultLocale" | "locales">
+): StarlightPluginsDocsComponentsI18nContext {
+  const localeKeys = Object.keys(starlightConfig.locales ?? {});
+
+  if (!hasConfiguredLocales(localeKeys)) {
+    return { defaultLocale: undefined, isMultilingual: false, localeKeys: [] };
+  }
+
+  return {
+    defaultLocale: getLocale(starlightConfig.defaultLocale),
+    isMultilingual: localeKeys.length > 1,
+    localeKeys,
+  };
+}
+
+export function resolveLocales(
+  context: StarlightPluginsDocsComponentsI18nContext
+): Locale[] {
+  if (!context.isMultilingual) return [context.defaultLocale];
+
+  return context.localeKeys.map(getLocale);
+}
+
+function hasConfiguredLocales(localeKeys: string[]): boolean {
+  return (
+    localeKeys.length > 1 ||
+    (localeKeys.length === 1 && localeKeys[0] !== RootLocale)
+  );
+}
+
+function getLocale(localeKey: string | undefined): Locale {
+  return localeKey === RootLocale ? undefined : localeKey;
 }
 
 export type Locale = string | undefined;
+
+export interface StarlightPluginsDocsComponentsI18nContext {
+  defaultLocale: Locale;
+  isMultilingual: boolean;
+  localeKeys: string[];
+}
