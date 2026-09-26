@@ -1,5 +1,23 @@
 # @trueberryless-org/starlight-plugins-docs-components
 
+## 0.7.0
+
+### Minor Changes
+
+- [#127](https://github.com/trueberryless-org/starlight-plugins-docs-components/pull/127) [`6d1a67e`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/6d1a67ed8393b0c0b34f06895d2d9681b3d84a35) Thanks [@trueberryless](https://github.com/trueberryless)! - Adds support for Astro v7, drops support for Astro v6.
+  
+  ⚠️ **BREAKING CHANGE:** The minimum supported version of Starlight is now `0.42.0`.
+  
+  Please follow the [upgrade guide](https://github.com/withastro/starlight/releases/tag/%40astrojs%2Fstarlight%400.42.0) to update your project.
+
+### Patch Changes
+
+- [#127](https://github.com/trueberryless-org/starlight-plugins-docs-components/pull/127) [`6d1a67e`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/6d1a67ed8393b0c0b34f06895d2d9681b3d84a35) Thanks [@trueberryless](https://github.com/trueberryless)! - Fixes missing spaces around the “Plugins and Integrations” link in the resources introduction.
+
+- [#127](https://github.com/trueberryless-org/starlight-plugins-docs-components/pull/127) [`6d1a67e`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/6d1a67ed8393b0c0b34f06895d2d9681b3d84a35) Thanks [@trueberryless](https://github.com/trueberryless)! - Fixes the showcase guide link to point to the new documentation site at `starlight-plugins-docs-components.netlify.app`.
+
+- [#127](https://github.com/trueberryless-org/starlight-plugins-docs-components/pull/127) [`6d1a67e`](https://github.com/trueberryless-org/starlight-plugins-docs-components/commit/6d1a67ed8393b0c0b34f06895d2d9681b3d84a35) Thanks [@trueberryless](https://github.com/trueberryless)! - Refactors the plugin internals and removes the `change-case` dependency.
+
 ## 0.6.0
 
 ### Minor Changes
