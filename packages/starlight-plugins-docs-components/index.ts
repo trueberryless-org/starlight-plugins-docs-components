@@ -5,7 +5,8 @@ import {
   type StarlightPluginsDocsComponentsUserConfig,
   validateConfig,
 } from "./libs/config";
-import { vitePluginStarlightPluginsDocsComponentsConfig } from "./libs/vite";
+import { getResourcesRoutes, getResourcesSidebar } from "./libs/starlight";
+import { vitePluginStarlightPluginsDocsComponents } from "./libs/vite";
 
 export type {
   StarlightPluginsDocsComponentsConfig,
@@ -25,50 +26,32 @@ export default function starlightPluginsDocsComponents(
         config: starlightConfig,
         updateConfig: updateStarlightConfig,
       }) {
-        const resourceItems = [
-          { label: "Showcase", link: "resources/sites" },
-          { label: "Plugins", link: "resources/plugins" },
-          { label: "Content from HiDeoo", link: "resources/hideoo" },
-        ];
-
-        starlightConfig.sidebar?.push({
-          label: "Resources",
-          items: resourceItems,
-        });
-
-        updateStarlightConfig({
-          sidebar: starlightConfig.sidebar,
-        });
+        if (starlightConfig.sidebar) {
+          updateStarlightConfig({
+            sidebar: getResourcesSidebar(starlightConfig.sidebar),
+          });
+        }
 
         addIntegration({
           name: "@trueberryless-org/starlight-plugins-docs-components-integration",
           hooks: {
-            "astro:config:setup": ({ injectRoute, updateConfig }) => {
-              injectRoute({
-                pattern: "[...prefix]/resources/sites",
-                entrypoint:
-                  "@trueberryless-org/starlight-plugins-docs-components/routes/Sites.astro",
-                prerender: true,
-              });
-
-              injectRoute({
-                pattern: "[...prefix]/resources/plugins",
-                entrypoint:
-                  "@trueberryless-org/starlight-plugins-docs-components/routes/Plugins.astro",
-                prerender: true,
-              });
-
-              injectRoute({
-                pattern: "[...prefix]/resources/hideoo",
-                entrypoint:
-                  "@trueberryless-org/starlight-plugins-docs-components/routes/HiDeoo.astro",
-                prerender: true,
-              });
+            "astro:config:setup": ({
+              config: astroConfig,
+              injectRoute,
+              updateConfig,
+            }) => {
+              for (const route of getResourcesRoutes()) {
+                injectRoute(route);
+              }
 
               updateConfig({
                 vite: {
                   plugins: [
-                    vitePluginStarlightPluginsDocsComponentsConfig(config),
+                    vitePluginStarlightPluginsDocsComponents(
+                      config,
+                      starlightConfig,
+                      astroConfig
+                    ),
                   ],
                 },
               });

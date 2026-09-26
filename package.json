@@ -1,31 +1,36 @@
 {
-  "name": "@trueberryless-org/starlight-plugins-docs-components-monorepo",
-  "version": "0.2.2",
-  "private": true,
-  "description": "Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations",
-  "homepage": "https://github.com/trueberryless-org/starlight-plugins-docs-components",
-  "bugs": {
-    "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components.git"
-  },
+  "name": "starlight-plugins-docs-components-monorepo",
+  "version": "0.0.0",
   "license": "MIT",
+  "description": "Starlight plugin to add a set of opinionated components and resource pages used in trueberryless-org's Starlight plugins documentations.",
   "author": "trueberryless <trueberryless@gmail.com> (https://felixs.dev)",
+  "private": true,
   "type": "module",
   "scripts": {
+    "build": "pnpm --filter @trueberryless-org/starlight-plugins-docs-components-docs build",
+    "check": "pnpm --filter @trueberryless-org/starlight-plugins-docs-components-docs astro sync && astro check --noSync",
+    "dev": "pnpm --filter @trueberryless-org/starlight-plugins-docs-components-docs dev",
+    "format": "prettier . --write --cache --ignore-unknown",
     "version": "pnpm changeset version && pnpm i --no-frozen-lockfile"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^1.0.0",
-    "@changesets/cli": "^3.0.0",
-    "@trivago/prettier-plugin-sort-imports": "6.0.2",
-    "prettier": "3.9.6",
-    "prettier-plugin-astro": "0.14.1"
+    "@astrojs/check": "^0.9.10",
+    "@changesets/changelog-github": "^1.0.1",
+    "@changesets/cli": "^3.0.3",
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+    "astro": "^7.3.5",
+    "prettier": "^3.9.9",
+    "prettier-plugin-astro": "^1.1.0",
+    "typescript": "^6.0.3"
   },
-  "packageManager": "pnpm@11.1.2",
+  "packageManager": "pnpm@11.28.0",
   "engines": {
-    "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
-  }
+    "node": ">=22.12.0"
+  },
+  "homepage": "https://starlight-plugins-docs-components.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trueberryless-org/starlight-plugins-docs-components.git"
+  },
+  "bugs": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues"
 }

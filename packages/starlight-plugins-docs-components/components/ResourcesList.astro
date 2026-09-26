@@ -1,7 +1,6 @@
 ---
-import { getResourceTypes } from "../libs/resources";
+import { getResourceSections } from "../libs/resources";
 import Resources from "./Resources.astro";
-import { capitalCase } from "change-case";
 
 interface Props {
   resourcesUrl?: string | undefined;
@@ -10,18 +9,12 @@ interface Props {
 
 const { resourcesUrl, githubOrg } = Astro.props;
 
-const resourceTypes = await getResourceTypes(resourcesUrl);
+const sections = await getResourceSections(resourcesUrl);
 ---
 
-{
-  resourceTypes.map((resourceType) => (
-    <>
-      <h2 id={resourceType}>{capitalCase(resourceType)}</h2>
-      <Resources
-        type={resourceType}
-        resourcesUrl={resourcesUrl}
-        githubOrg={githubOrg}
-      />
-    </>
-  ))
-}
+{sections.map(({ type, label }) => (
+  <>
+    <h2 id={type}>{label}</h2>
+    <Resources {type} {resourcesUrl} {githubOrg} />
+  </>
+))}

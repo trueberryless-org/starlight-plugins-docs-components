@@ -1,34 +1,24 @@
-import type { ImageMetadata, ViteUserConfig } from "astro";
+import type { StarlightUserConfig } from "@astrojs/starlight/types";
+import type { AstroConfig, ViteUserConfig } from "astro";
+import { fileURLToPath } from "node:url";
 
-import type { StarlightPluginsDocsComponentsConfig } from "..";
+import type { StarlightPluginsDocsComponentsConfig } from "./config";
+import { getI18nContext } from "./i18n";
 
-export function vitePluginStarlightPluginsDocsComponentsConfig(
-  config: StarlightPluginsDocsComponentsConfig
+export function vitePluginStarlightPluginsDocsComponents(
+  config: StarlightPluginsDocsComponentsConfig,
+  starlightConfig: Pick<StarlightUserConfig, "defaultLocale" | "locales">,
+  astroConfig: Pick<AstroConfig, "root">
 ): VitePlugin {
+  const context = getI18nContext(starlightConfig);
+
   const modules = {
-    "virtual:starlight-plugins-docs-components-context": `export default {
-            githubOwner: ${JSON.stringify(config.githubOwner)},
-            pluginName: ${JSON.stringify(config.pluginName)},
-            showcaseFilepath: ${JSON.stringify(config.showcaseFilepath)},
-            showcaseProps: {
-                entries: [
-                    ${config.showcaseProps.entries
-                      .map(
-                        (entry) => `{
-                                thumbnail: await import(${JSON.stringify(
-                                  entry.thumbnail
-                                )}),
-                                href: ${JSON.stringify(entry.href)},
-                                title: ${JSON.stringify(entry.title)},
-                                description: ${JSON.stringify(
-                                  entry.description
-                                )}
-                            }`
-                      )
-                      .join(",")}
-                ]
-            }
-        }`,
+    "virtual:starlight-plugins-docs-components/config": `export default ${JSON.stringify(config)};`,
+    "virtual:starlight-plugins-docs-components/context": `export default ${JSON.stringify(context)};`,
+    "virtual:starlight-plugins-docs-components/images": getImagesVirtualModule(
+      config,
+      astroConfig
+    ),
   };
 
   const moduleResolutionMap = Object.fromEntries(
@@ -45,31 +35,43 @@ export function vitePluginStarlightPluginsDocsComponentsConfig(
       return moduleId ? modules[moduleId] : undefined;
     },
     resolveId(id) {
-      return id in modules ? resolveVirtualModuleId(id) : undefined;
+      return Object.hasOwn(modules, id)
+        ? resolveVirtualModuleId(id)
+        : undefined;
     },
   };
+}
+
+function getImagesVirtualModule(
+  config: StarlightPluginsDocsComponentsConfig,
+  astroConfig: Pick<AstroConfig, "root">
+): string {
+  const moduleIds = config.showcaseProps.entries.map((entry) =>
+    resolveModuleId(entry.thumbnail, astroConfig)
+  );
+
+  const imports = moduleIds.map(
+    (moduleId, index) =>
+      `import thumbnail${index} from ${JSON.stringify(moduleId)};`
+  );
+  const thumbnails = moduleIds.map((_, index) => `thumbnail${index}`);
+
+  return `${imports.join("\n")}
+
+export const thumbnails = [${thumbnails.join(", ")}];`;
+}
+
+function resolveModuleId(
+  id: string,
+  astroConfig: Pick<AstroConfig, "root">
+): string {
+  return id.startsWith(".") ? fileURLToPath(new URL(id, astroConfig.root)) : id;
 }
 
 function resolveVirtualModuleId<TModuleId extends string>(
   id: TModuleId
 ): `\0${TModuleId}` {
   return `\0${id}`;
-}
-
-export interface StarlightPluginsDocsComponentsContext {
-  githubOwner: string;
-  pluginName: string;
-  showcaseFilepath: string;
-  showcaseProps: {
-    entries: {
-      thumbnail: Promise<{
-        default: ImageMetadata;
-      }>;
-      href: string;
-      title: string;
-      description?: string;
-    }[];
-  };
 }
 
 type VitePlugin = NonNullable<ViteUserConfig["plugins"]>[number];

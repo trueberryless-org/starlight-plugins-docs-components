@@ -1,17 +1,8 @@
 {
   "name": "@trueberryless-org/starlight-plugins-docs-components",
   "version": "0.6.0",
-  "description": "Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations",
-  "homepage": "https://starlight-plugins-docs-components.netlify.app/",
-  "bugs": {
-    "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components.git",
-    "directory": "packages/starlight-plugins-docs-components"
-  },
   "license": "MIT",
+  "description": "Starlight plugin to add a set of opinionated components and resource pages used in trueberryless-org's Starlight plugins documentations.",
   "author": "trueberryless <trueberryless@gmail.com> (https://felixs.dev)",
   "type": "module",
   "exports": {
@@ -27,21 +18,39 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@hideoo/starlight-plugins-docs-components": "^0.4.2",
-    "change-case": "^5.4.4",
+    "@hideoo/starlight-plugins-docs-components": "^0.5.0",
     "starlight-showcases": "^0.3.2"
   },
   "devDependencies": {
-    "@astrojs/starlight": "^0.42.0",
-    "astro": "^7.3.1"
+    "@astrojs/starlight": "^0.42.4",
+    "astro": "^7.3.5"
   },
   "peerDependencies": {
-    "@astrojs/starlight": ">=0.38"
+    "@astrojs/starlight": ">=0.42.0"
   },
   "engines": {
-    "node": ">=22.23.2"
+    "node": ">=22.12.0"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "sideEffects": false,
+  "keywords": [
+    "starlight",
+    "plugin",
+    "components",
+    "showcase",
+    "resources",
+    "documentation",
+    "astro",
+    "withastro",
+    "astro-integration"
+  ],
+  "homepage": "https://starlight-plugins-docs-components.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trueberryless-org/starlight-plugins-docs-components.git",
+    "directory": "packages/starlight-plugins-docs-components"
+  },
+  "bugs": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues"
 }

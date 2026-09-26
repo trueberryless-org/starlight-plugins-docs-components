@@ -1,12 +1,12 @@
 # `@trueberryless-org/starlight-plugins-docs-components`
 
-Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations
+Starlight plugin to add a set of opinionated components and resource pages used in trueberryless-org's Starlight plugins documentations.
 
 ## Documentation
 
 Want to get started immediately?
 
-Check out the `@trueberryless-org/starlight-plugins-docs-components` getting started guide.
+Check out the [`@trueberryless-org/starlight-plugins-docs-components` getting started guide](https://starlight-plugins-docs-components.netlify.app/getting-started/).
 
 ## License
 

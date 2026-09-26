@@ -11,25 +11,27 @@ interface Props {
 
 const { cta, href, emptyList } = Astro.props;
 const guideHref =
-  "https://starlight-plugins-docs-components.trueberryless.org/add-showcase/";
+  "https://starlight-plugins-docs-components.netlify.app/add-showcase/";
 ---
 
-<!-- prettier-ignore -->
 <ShowcaseCTA>
   {cta}
   <br />
-  {
-    !emptyList && (
-      <p>
-        Follow <a href={guideHref}>our guide</a> and <a {href} target="_blank" rel="noopener noreferrer">open a PR</a> to add it to the list!
-      </p>
-    )
-  }
-  {
-    emptyList && (
-      <p>
-        Be the first one to follow <a href={guideHref}>our guide</a>, <a {href} target="_blank" rel="noopener noreferrer">open a PR</a> and initialize the list!
-      </p>
-    )
-  }
+  {emptyList ? (
+    <p>
+      Be the first one to follow <a href={guideHref}>our guide</a>,{" "}
+      <a {href} target="_blank" rel="noopener noreferrer">
+        open a PR
+      </a>{" "}
+      and initialize the list!
+    </p>
+  ) : (
+    <p>
+      Follow <a href={guideHref}>our guide</a> and{" "}
+      <a {href} target="_blank" rel="noopener noreferrer">
+        open a PR
+      </a>{" "}
+      to add it to the list!
+    </p>
+  )}
 </ShowcaseCTA>

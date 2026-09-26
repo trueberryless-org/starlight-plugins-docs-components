@@ -2,7 +2,7 @@
 title: Getting Started
 ---
 
-Set of opinionated Starlight components used in trueberryless-org&#39;s Starlight plugins documentations.
+Set of opinionated Starlight components used in trueberryless-org's Starlight plugins documentations.
 
 :::note
 Make sure to also check out [HiDeoo's docs components](https://github.com/HiDeoo/starlight-plugins-docs-components) for more Starlight components! If you wanna get started with his components, check out [the Getting Started guide](/add-hideoo).
@@ -69,18 +69,11 @@ import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
     +          showcaseProps: {
     +            entries: [
     +              {
-    +                thumbnail: "./src/assets/starlight-sidebar-topics-dropdown.png",
-    +                href: "https://github.com/trueberryless-org/starlight-sidebar-topics-dropdown",
-    +                title: "Starlight Sidebar Topics Dropdown",
-    +                description:
-    +                    "Split your docs page into multiple subpages and switch between them with a dropdown menu in the sidebar.",
-    +              },
-    +              {
-    +                thumbnail: "./src/assets/starlight-view-modes.png",
+    +                thumbnail: "./src/assets/showcase/starlight-view-modes.png",
     +                href: "https://github.com/trueberryless-org/starlight-view-modes",
     +                title: "Starlight View Modes",
     +                description:
-    +                    "Add different view mode capabilities to your documentation website.",
+    +                  "Add different view mode capabilities to your documentation website.",
     +              },
     +            ],
     +          },
@@ -91,11 +84,13 @@ import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
     })
     ```
 
-3. :::note
-   Don't forget to add image assets to `./src/assets/`.
-   :::
+3. Add the showcase thumbnails to your project, e.g. in the `src/assets/showcase/` directory.
 
-4. That's it! The routes will be injected automatically and the sidebar will be generated. [Start the development server](https://starlight.astro.build/getting-started/#start-the-development-server) to preview the plugin in action.
+    :::note
+    Relative `thumbnail` paths are resolved from the root of your Astro project (the directory containing your `astro.config.mjs` file).
+    :::
+
+4. That's it! The routes will be injected automatically and a “Resources” group will be added to your [sidebar](https://starlight.astro.build/reference/configuration/#sidebar) if you configure one. [Start the development server](https://starlight.astro.build/getting-started/#start-the-development-server) to preview the plugin in action.
 
 </Steps>
 
