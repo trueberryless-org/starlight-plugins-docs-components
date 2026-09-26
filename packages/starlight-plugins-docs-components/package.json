@@ -1,6 +1,6 @@
 {
   "name": "@trueberryless-org/starlight-plugins-docs-components",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "license": "MIT",
   "description": "Starlight plugin to add a set of opinionated components and resource pages used in trueberryless-org's Starlight plugins documentations.",
   "author": "trueberryless <trueberryless@gmail.com> (https://felixs.dev)",
