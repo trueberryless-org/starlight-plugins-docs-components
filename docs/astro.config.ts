@@ -3,10 +3,34 @@ import starlightPluginsDocsComponents from "@trueberryless-org/starlight-plugins
 import { defineConfig } from "astro/config";
 import starlightLinksValidator from "starlight-links-validator";
 
+const site =
+  (process.env.CONTEXT === "deploy-preview" ||
+  process.env.CONTEXT === "branch-deploy"
+    ? process.env.DEPLOY_PRIME_URL
+    : process.env.URL) ??
+  "https://starlight-plugins-docs-components.netlify.app";
+
 export default defineConfig({
+  site,
   integrations: [
     starlight({
       title: "Starlight Plugins Docs Components",
+      head: [
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:image",
+            content: new URL("og.png", site).href,
+          },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:image:alt",
+            content: "Components for Starlight plugin docs.",
+          },
+        },
+      ],
       editLink: {
         baseUrl:
           "https://github.com/trueberryless-org/starlight-plugins-docs-components/edit/main/docs/",
