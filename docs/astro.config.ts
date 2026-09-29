@@ -86,6 +86,11 @@ export default defineConfig({
       ],
       social: [
         {
+          icon: "blueSky",
+          label: "BlueSky",
+          href: "https://bsky.app/profile/felixs.dev",
+        },
+        {
           icon: "github",
           label: "GitHub",
           href: "https://github.com/trueberryless-org/starlight-plugins-docs-components",
