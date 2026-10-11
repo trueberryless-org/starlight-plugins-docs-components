@@ -1,9 +1,30 @@
 {
   "name": "@trueberryless-org/starlight-plugins-docs-components",
   "version": "0.7.0",
-  "license": "MIT",
   "description": "Starlight plugin to add a set of opinionated components and resource pages used in trueberryless-org's Starlight plugins documentations.",
+  "keywords": [
+    "starlight",
+    "plugin",
+    "components",
+    "showcase",
+    "resources",
+    "documentation",
+    "astro",
+    "withastro",
+    "astro-integration"
+  ],
+  "homepage": "https://starlight-plugins-docs-components.netlify.app/",
+  "bugs": {
+    "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trueberryless-org/starlight-plugins-docs-components.git",
+    "directory": "packages/starlight-plugins-docs-components"
+  },
+  "license": "MIT",
   "author": "trueberryless <trueberryless@gmail.com> (https://felixs.dev)",
+  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": "./index.ts",
@@ -33,24 +54,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "sideEffects": false,
-  "keywords": [
-    "starlight",
-    "plugin",
-    "components",
-    "showcase",
-    "resources",
-    "documentation",
-    "astro",
-    "withastro",
-    "astro-integration"
-  ],
-  "homepage": "https://starlight-plugins-docs-components.netlify.app",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/trueberryless-org/starlight-plugins-docs-components.git",
-    "directory": "packages/starlight-plugins-docs-components"
-  },
-  "bugs": "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues"
+  }
 }
