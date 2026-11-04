@@ -19,7 +19,7 @@ export default function starlightPluginsDocsComponents(
   const config = validateConfig(userConfig);
 
   return {
-    name: "@trueberryless-org/starlight-plugins-docs-components",
+    name: "@trueberryless/starlight-plugins-docs-components",
     hooks: {
       "config:setup"({
         addIntegration,
@@ -33,7 +33,7 @@ export default function starlightPluginsDocsComponents(
         }
 
         addIntegration({
-          name: "@trueberryless-org/starlight-plugins-docs-components-integration",
+          name: "@trueberryless/starlight-plugins-docs-components-integration",
           hooks: {
             "astro:config:setup": ({
               config: astroConfig,

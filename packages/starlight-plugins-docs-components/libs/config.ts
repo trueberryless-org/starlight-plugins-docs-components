@@ -26,7 +26,7 @@ export function validateConfig(
   const config = configSchema.safeParse(userConfig);
 
   if (!config.success) {
-    throwPluginError(`Invalid @trueberryless-org/starlight-plugins-docs-components configuration:
+    throwPluginError(`Invalid @trueberryless/starlight-plugins-docs-components configuration:
 
 ${z.prettifyError(config.error)}
 `);

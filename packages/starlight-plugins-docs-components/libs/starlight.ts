@@ -1,7 +1,7 @@
 import type { StarlightUserConfig } from "@astrojs/starlight/types";
 import type { InjectedRoute } from "astro";
 
-const packageName = "@trueberryless-org/starlight-plugins-docs-components";
+const packageName = "@trueberryless/starlight-plugins-docs-components";
 
 const resourcesRoutes = [
   { slug: "sites", label: "Showcase", entrypoint: "Sites" },
