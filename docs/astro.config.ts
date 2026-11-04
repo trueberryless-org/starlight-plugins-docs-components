@@ -37,7 +37,7 @@ export default defineConfig({
       ],
       editLink: {
         baseUrl:
-          "https://github.com/trueberryless-org/starlight-plugins-docs-components/edit/main/docs/",
+          "https://github.com/trueberryless/starlight-plugins-docs-components/edit/main/docs/",
       },
       customCss: ["./src/styles/custom.css"],
       plugins: [
@@ -56,14 +56,14 @@ export default defineConfig({
               {
                 thumbnail:
                   "./src/assets/showcase/starlight-sidebar-topics-dropdown.png",
-                href: "https://github.com/trueberryless-org/starlight-sidebar-topics-dropdown",
+                href: "https://github.com/trueberryless/starlight-sidebar-topics-dropdown",
                 title: "Starlight Sidebar Topics Dropdown",
                 description:
                   "Split your docs page into multiple subpages and switch between them with a dropdown menu in the sidebar.",
               },
               {
                 thumbnail: "./src/assets/showcase/starlight-view-modes.png",
-                href: "https://github.com/trueberryless-org/starlight-view-modes",
+                href: "https://github.com/trueberryless/starlight-view-modes",
                 title: "Starlight View Modes",
                 description:
                   "Add different view mode capabilities to your documentation website.",
@@ -97,7 +97,7 @@ export default defineConfig({
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/trueberryless-org/starlight-plugins-docs-components",
+          href: "https://github.com/trueberryless/starlight-plugins-docs-components",
         },
       ],
     }),

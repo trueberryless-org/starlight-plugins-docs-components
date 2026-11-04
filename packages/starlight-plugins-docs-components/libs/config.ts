@@ -10,7 +10,7 @@ const showcaseEntrySchema = z.object({
 });
 
 const configSchema = z.object({
-  githubOwner: z.string().default("trueberryless-org"),
+  githubOwner: z.string().default("trueberryless"),
   pluginName: z.string(),
   showcaseFilepath: z.string().default("./docs/astro.config.ts"),
   showcaseProps: z

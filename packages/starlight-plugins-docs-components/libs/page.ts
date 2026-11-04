@@ -37,7 +37,7 @@ export function resolvePluginsPage(types: ResourceType[]): ResourcesPage {
   return {
     frontmatter: {
       title: `Starlight ${humanizeList(types.map(toCapitalCase))}`,
-      description: `A collection of ${humanizeList(types)} created by trueberryless-org`,
+      description: `A collection of ${humanizeList(types)} created by trueberryless`,
       sidebar: { order: 2 },
     },
     headings: resolveResourceHeadings(types),

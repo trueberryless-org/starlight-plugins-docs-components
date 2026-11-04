@@ -1,7 +1,7 @@
 import { AstroError } from "astro/errors";
 
 const issueUrl =
-  "https://github.com/trueberryless-org/starlight-plugins-docs-components/issues/new";
+  "https://github.com/trueberryless/starlight-plugins-docs-components/issues/new";
 
 export function throwPluginError(message: string, hint?: string): never {
   const hintHeader = "See the error report above for more informations.";

@@ -2,7 +2,7 @@
   "name": "@trueberryless/starlight-plugins-docs-components-monorepo",
   "version": "0.0.0",
   "private": true,
-  "description": "Starlight plugin to add a set of opinionated components and resource pages used in trueberryless-org's Starlight plugins documentations.",
+  "description": "Starlight plugin to add a set of opinionated components and resource pages used in trueberryless's Starlight plugins documentations.",
   "homepage": "https://github.com/trueberryless/starlight-plugins-docs-components",
   "bugs": {
     "url": "https://github.com/trueberryless/starlight-plugins-docs-components/issues"
@@ -15,9 +15,9 @@
   "author": "trueberryless <trueberryless@gmail.com> (https://felixs.dev)",
   "type": "module",
   "scripts": {
-    "build": "pnpm --filter @trueberryless-org/starlight-plugins-docs-components-docs build",
-    "check": "pnpm --filter @trueberryless-org/starlight-plugins-docs-components-docs astro sync && astro check --noSync",
-    "dev": "pnpm --filter @trueberryless-org/starlight-plugins-docs-components-docs dev",
+    "build": "pnpm --filter ./docs build",
+    "check": "pnpm --filter ./docs astro sync && astro check --noSync",
+    "dev": "pnpm --filter ./docs dev",
     "format": "prettier . --write --cache --ignore-unknown",
     "version": "pnpm changeset version && pnpm i --no-frozen-lockfile"
   },

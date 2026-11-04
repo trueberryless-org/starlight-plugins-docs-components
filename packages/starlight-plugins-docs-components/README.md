@@ -1,6 +1,6 @@
 # `@trueberryless-org/starlight-plugins-docs-components`
 
-Starlight plugin to add a set of opinionated components and resource pages used in trueberryless-org's Starlight plugins documentations.
+Starlight plugin to add a set of opinionated components and resource pages used in trueberryless's Starlight plugins documentations.
 
 ## Documentation
 

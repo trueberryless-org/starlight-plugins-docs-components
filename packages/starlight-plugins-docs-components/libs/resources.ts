@@ -18,7 +18,7 @@ export async function getResourceTypes(
 export async function getResourceEntries(
   type: ResourceType,
   resourcesUrl: string = trueberrylessResourcesUrl,
-  githubOrg: string = "trueberryless-org"
+  githubOrg: string = "trueberryless"
 ): Promise<ResourceEntry[]> {
   const resources = await fetchResources(resourcesUrl);
   return resolveResourceEntries(resources[type] ?? [], githubOrg);

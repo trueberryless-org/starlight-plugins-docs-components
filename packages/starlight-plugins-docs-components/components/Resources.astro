@@ -11,7 +11,7 @@ interface Props {
   githubOrg?: string | undefined;
 }
 
-const { type, resourcesUrl, githubOrg = "trueberryless-org" } = Astro.props;
+const { type, resourcesUrl, githubOrg = "trueberryless" } = Astro.props;
 
 const entries = await getResourceEntries(type, resourcesUrl, githubOrg);
 ---
