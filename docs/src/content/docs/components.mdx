@@ -2,18 +2,18 @@
 title: Components
 ---
 
-Here you can find a list of all the components which are exported by the `@trueberryless-org/starlight-plugins-docs-components` package. These components are automatically used in the three injected routes `/resources/sites`, `/resources/plugins` and `/resources/hideoo` but you can also use them manually.
+Here you can find a list of all the components which are exported by the `@trueberryless/starlight-plugins-docs-components` package. These components are automatically used in the three injected routes `/resources/sites`, `/resources/plugins` and `/resources/hideoo` but you can also use them manually.
 
 import Preview from "../../components/component-preview.astro";
 
 ### ResourcesIntro
 
-import ResourcesIntro from "@trueberryless-org/starlight-plugins-docs-components/components/ResourcesIntro.astro";
+import ResourcesIntro from "@trueberryless/starlight-plugins-docs-components/components/ResourcesIntro.astro";
 
 The `ResourcesIntro` component is used to introduce the resources section. It centralizes the management of the introduction content, so it only needs to be changed in one place.
 
 ```mdx
-import ResourcesIntro from "@trueberryless-org/starlight-plugins-docs-components/components/ResourcesIntro.astro";
+import ResourcesIntro from "@trueberryless/starlight-plugins-docs-components/components/ResourcesIntro.astro";
 
 <ResourcesIntro />
 ```
@@ -26,12 +26,12 @@ import ResourcesIntro from "@trueberryless-org/starlight-plugins-docs-components
 
 ### Resources
 
-import Resources from "@trueberryless-org/starlight-plugins-docs-components/components/Resources.astro";
+import Resources from "@trueberryless/starlight-plugins-docs-components/components/Resources.astro";
 
 The `Resources` component is used to display all resources of a specific type. The `type` property is one of the keys of the [raw JSON data](#raw-json-data).
 
 ```mdx
-import Resources from "@trueberryless-org/starlight-plugins-docs-components/components/Resources.astro";
+import Resources from "@trueberryless/starlight-plugins-docs-components/components/Resources.astro";
 
 <Resources type="plugins" />
 ```
@@ -44,12 +44,12 @@ import Resources from "@trueberryless-org/starlight-plugins-docs-components/comp
 
 ### ResourcesList
 
-import ResourcesList from "@trueberryless-org/starlight-plugins-docs-components/components/ResourcesList.astro";
+import ResourcesList from "@trueberryless/starlight-plugins-docs-components/components/ResourcesList.astro";
 
 The `ResourcesList` component is used to display all resources of all types with the keys as headings. It can be useful when you want to display all resources in a list but you don't want to list all the types manually.
 
 ```mdx
-import ResourcesList from "@trueberryless-org/starlight-plugins-docs-components/components/ResourcesList.astro";
+import ResourcesList from "@trueberryless/starlight-plugins-docs-components/components/ResourcesList.astro";
 
 <ResourcesList />
 ```
@@ -62,12 +62,12 @@ import ResourcesList from "@trueberryless-org/starlight-plugins-docs-components/
 
 ### ShowcaseIntro
 
-import ShowcaseIntro from "@trueberryless-org/starlight-plugins-docs-components/components/ShowcaseIntro.astro";
+import ShowcaseIntro from "@trueberryless/starlight-plugins-docs-components/components/ShowcaseIntro.astro";
 
 The `ShowcaseIntro` component is used to introduce the showcase section. It centralizes the management of the introduction content, so it only needs to be changed in one place. Each introduction of the showcase page has its own "Call to action" text and `href` property, which is used to link to the source code of the showcase page.
 
 ```mdx
-import ShowcaseIntro from "@trueberryless-org/starlight-plugins-docs-components/components/ShowcaseIntro.astro";
+import ShowcaseIntro from "@trueberryless/starlight-plugins-docs-components/components/ShowcaseIntro.astro";
 
 <ShowcaseIntro
     cta="Have you built a website using YOUR_PLUGIN?"
@@ -88,12 +88,12 @@ import ShowcaseIntro from "@trueberryless-org/starlight-plugins-docs-components/
 
 ### Showcase
 
-import Showcase from "@trueberryless-org/starlight-plugins-docs-components/components/Showcase.astro";
+import Showcase from "@trueberryless/starlight-plugins-docs-components/components/Showcase.astro";
 
 The `Showcase` component is used to display a list of showcase entries. These entries have to be listed manually in the `entries` property via `JSON` syntax.
 
 ```mdx
-import Showcase from "@trueberryless-org/starlight-plugins-docs-components/components/Showcase.astro";
+import Showcase from "@trueberryless/starlight-plugins-docs-components/components/Showcase.astro";
 
 <Showcase
     entries={[

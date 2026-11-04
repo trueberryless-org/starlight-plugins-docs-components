@@ -1,6 +1,6 @@
-# `@trueberryless-org/starlight-plugins-docs-components-docs`
+# `@trueberryless/starlight-plugins-docs-components-docs`
 
-Documentation for the `@trueberryless-org/starlight-plugins-docs-components` Starlight plugin, deployed at [starlight-plugins-docs-components.netlify.app](https://starlight-plugins-docs-components.netlify.app).
+Documentation for the `@trueberryless/starlight-plugins-docs-components` Starlight plugin, deployed at [starlight-plugins-docs-components.netlify.app](https://starlight-plugins-docs-components.netlify.app).
 
 ## Documentation
 
