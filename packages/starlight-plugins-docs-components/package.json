@@ -1,6 +1,6 @@
 {
   "name": "@trueberryless/starlight-plugins-docs-components",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Starlight plugin to add a set of opinionated components and resource pages used in trueberryless's Starlight plugins documentations.",
   "keywords": [
     "starlight",
