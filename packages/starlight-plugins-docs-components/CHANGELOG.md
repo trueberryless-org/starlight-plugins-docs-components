@@ -1,5 +1,13 @@
 # @trueberryless-org/starlight-plugins-docs-components
 
+## 0.7.1
+
+### Patch Changes
+
+- [#136](https://github.com/trueberryless/starlight-plugins-docs-components/pull/136) [`a17c08f`](https://github.com/trueberryless/starlight-plugins-docs-components/commit/a17c08f07fb3d24d12d2462c52a70862dea3674f) Thanks [@trueberryless-bot](https://github.com/trueberryless-bot)! - Changes the default GitHub owner from `trueberryless-org` to `trueberryless`, so the repository and edit links of the plugins point to their new location.
+
+- [#136](https://github.com/trueberryless/starlight-plugins-docs-components/pull/136) [`a17c08f`](https://github.com/trueberryless/starlight-plugins-docs-components/commit/a17c08f07fb3d24d12d2462c52a70862dea3674f) Thanks [@trueberryless-bot](https://github.com/trueberryless-bot)! - Updates the repository links after the move from the `trueberryless-org` GitHub organization to the `trueberryless` account.
+
 ## 0.7.0
 
 ### Minor Changes
