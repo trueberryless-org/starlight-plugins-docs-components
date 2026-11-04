@@ -1,5 +1,11 @@
 # @trueberryless-org/starlight-plugins-docs-components
 
+## 0.7.2
+
+### Patch Changes
+
+- [#138](https://github.com/trueberryless/starlight-plugins-docs-components/pull/138) [`5665131`](https://github.com/trueberryless/starlight-plugins-docs-components/commit/56651318557c3b4d93cbd51fdf833decb5edfe2b) Thanks [@trueberryless-bot](https://github.com/trueberryless-bot)! - Fixes the injected resource pages failing to build because their routes still pointed to the old `@trueberryless-org/starlight-plugins-docs-components` package.
+
 ## 0.7.1
 
 ### Patch Changes
